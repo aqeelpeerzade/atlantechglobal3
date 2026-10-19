@@ -7,7 +7,7 @@ import { ArrowIcon, ChevronIcon, GlobeIcon } from "@/lib/icons";
 import { asset } from "@/lib/asset";
 import styles from "./Header.module.css";
 
-type MenuKey = "services" | "industries" | "whyUs"| "work" | "insights" | "about";
+type MenuKey = "services" | "industries" | "whyUs"| "work" | "insights" | "about"|"platforms";
 
 type MenuLink = { title: string; desc?: string; href: string; icon?: string };
 
@@ -26,12 +26,15 @@ type NavItem = { label: string; href: string } | { label: string; menu: MenuKey 
 const NAV: NavItem[] = [
   { label: "Services", menu: "services" },
   { label: "Industries", menu: "industries" },
-{ label: "Why Us", href: "/why-us" },
+{ label: "Platforms", menu: "platforms" },
+
   // { label: "Contact Us", menu: "contact" },
   { label: "Our Work", menu: "work" },
   { label: "Insights", menu: "insights" },
   { label: "About", menu: "about" },
+  { label: "Careers", href: "careers" }
   // { label: "FAQ", href: "/#faq" },
+
 ];
 
 function bg(path: string) {
@@ -46,12 +49,12 @@ const MENUS: Record<MenuKey, Menu> = {
     cta: { label: "Explore Services", href: "/#services" },
     layout: "icons",
     links: [
-      { title: "AI & Automation", desc: "Build intelligent business workflows.", href: "/ai-automation", icon: "/images/ai-auto.svg" },
-      { title: "Product Engineering", desc: "Digital products from idea to launch.", href: "/product-engineering", icon: "/images/automation.svg" },
-      { title: "Cloud Infrastructure", desc: "Cloud migration and DevOps.", href: "/cloud-infrastructure", icon: "/images/badal.svg" },
-     { title: "Data Analytics", desc: "Turn enterprise data into insights.", href: "/data-analytics", icon: "/images/data-analytics.svg" },
+      { title: "AI & Automation", desc: "Build intelligent business workflows.", href: "/ai-automation-services", icon: "/images/ai-auto.svg" },
+      { title: "Product Engineering", desc: "Digital products from idea to launch.", href: "/product-engineering-services", icon: "/images/automation.svg" },
+      { title: "Cloud Infrastructure", desc: "Cloud migration and DevOps.", href: "/cloud-infrastructure-services", icon: "/images/badal.svg" },
+     { title: "Data Analytics", desc: "Turn enterprise data into insights.", href: "/data-analytics-services", icon: "/images/data-analytics.svg" },
       { title: "Managed Services", desc: "24x7 infrastructure management.", href: "/managed-services", icon: "/images/mana-services.svg" },
-      { title: "Digital Transformation", desc: "Enterprise modernization strategy.", href: "/digital-transformation", icon: "/images/inovation.svg" },
+      { title: "Digital Transformation", desc: "Enterprise modernization strategy.", href: "/digital-transformation-services", icon: "/images/inovation.svg" },
     ],
     aside: (
       <>
@@ -81,7 +84,7 @@ const MENUS: Record<MenuKey, Menu> = {
     eyebrow: "INDUSTRIES",
     title: "Solutions built for every industry.",
     desc: "Deep domain expertise across regulated and consumer sectors — from healthcare to telecom.",
-    cta: { label: "View Industries", href: "/#industries" },
+    cta: { label: "View Industries", href: "/industries" },
     layout: "icons",
     links: [
       { title: "Healthcare", desc: "Patient-first digital platforms.", href: "/#industries", icon: "/images/lifescience.svg" },
@@ -133,8 +136,8 @@ const MENUS: Record<MenuKey, Menu> = {
     layout: "icons",
     links: [
       { title: "Digital Experiences", desc: "Products shipped at scale.", href: "/#work", icon: "/images/ou-star.svg" },
-      { title: "Success Stories", desc: "Impact across industries.", href: "/#work", icon: "/images/success-stories.svg" },
-      { title: "Client Testimonials", desc: "In their own words.", href: "/#work", icon: "/images/client.svg" },
+      { title: "Success Stories", desc: "Impact across industries.", href: "/#testimonials", icon: "/images/success-stories.svg" },
+      { title: "Client Testimonials", desc: "In their own words.", href: "/#testimonials", icon: "/images/client.svg" },
     ],
     aside: (
       <Link href="/#work" className={styles.card}>
@@ -188,7 +191,7 @@ const MENUS: Record<MenuKey, Menu> = {
       { title: "About Atlantech", desc: "Our story and mission.", href: "/who-we-are" },
       { title: "Leadership", desc: "The team behind the work.", href: "/who-we-are" },
       { title: "Why Us", desc: "What sets us apart.", href: "/why-us" },
-      { title: "Careers", desc: "Join a global team.", href: "/contact" },
+      { title: "Careers", desc: "Join a global team.", href: "/careers" },
       { title: "Contact", desc: "Talk to an expert.", href: "/contact" },
     ],
     aside: (
@@ -210,7 +213,30 @@ const MENUS: Record<MenuKey, Menu> = {
       </div>
     ),
   },
-};
+
+
+platforms: {
+    eyebrow: "Platforms",
+    title: "Technology Platforms That Power Business.",
+    desc: "Discover enterprise platforms that connect customer experiences, business operations, cloud infrastructure, and intelligent applications.",
+    cta: { label: "View Platforms", href: "/platforms" },
+    layout: "icons",
+    links: [
+      { title: "Adobe Commerce", desc: "Create flexible, scalable commerce experiences.", href: "/platforms/adobe-commerce", icon: "/images/icons/adobe-commerce.svg" },
+      { title: "Adobe Experience Platform", desc: "Connect data to create better customer experiences.", href: "/platforms/adobe-experience-platform", icon: "/images/icons/adobe-experience.svg" },
+      { title: "ERPNext", desc: "Simplify business operations with connected ERP.", href: "/platforms/erpnext", icon: "/images/icons/erpnext.svg" },
+      { title: "Google Cloud", desc: "Build and scale with cloud technology.", href: "/platforms/google-cloud", icon: "/images/icons/google-cloud.svg" },
+      { title: "Zoho", desc: "Connect business workflows with smarter applications.", href: "/platforms/zoho", icon: "/images/icons/zoho.svg" },
+    ],
+    aside: (
+      <div className={styles.photo} style={bg("/images/trustedby.webp")}>
+        <span>OUR PLATFORMS</span>
+        <strong>Connecting enterprise technology with smarter business outcomes</strong>
+      </div>
+    ),
+  },
+  
+};  
 
 const SERVICE_STATS = [
   ["150+", "EXPERTS"],

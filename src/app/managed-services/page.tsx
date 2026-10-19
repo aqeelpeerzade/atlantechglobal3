@@ -187,30 +187,29 @@ const challenges = [
 ];
 
 const faqs: ServiceFaqItem[] = [
-  {
-    q: "What are Managed IT Services?",
-    a: "IT Managed Services encompass the proactive management, monitoring, and ongoing maintenance of an organization's IT infrastructure, cloud fabrics, databases, applications, and end-user endpoints. Coverage includes 24/7/365 NOC monitoring, automated vulnerability patching, incident response triage, data backups, disaster recovery, and strategic IT capacity planning.",
-  },
-  {
-    q: "How do Managed IT Services improve business security?",
-    a: "Through continuous monitoring, automated patching, Zero-Trust access controls, and real-time vulnerability scanning, along with audit trails that keep your compliance posture verifiable at all times.",
-  },
-  {
-    q: "How do Managed IT Services reduce IT costs?",
-    a: "Fixed, predictable service models replace unplanned operational spend, while automated right-sizing and continuous FinOps governance prevent wasteful over-provisioning across your infrastructure.",
-  },
-  {
-    q: "Can Managed IT Services support cloud infrastructure?",
-    a: "Yes — coverage spans multi-cloud and hybrid orchestration, cloud monitoring and stack optimization, identity and security governance, and dynamic scaling across AWS, Azure, and private cloud fabrics.",
-  },
-  {
-    q: "Are Managed IT Services worth it for growing businesses?",
-    a: "Growing businesses benefit from elastic engineering squads and infrastructure that scales with them, avoiding the overhead of building an internal team from scratch while maintaining enterprise-grade reliability.",
-  },
-  {
-    q: "How do Managed Services ensure application availability?",
-    a: "Proactive app monitoring with SLA-backed support, ongoing performance tuning, automated patch operations, and continuous lifecycle management keep applications healthy and available.",
-  },
+ {
+  q: "What are Managed IT Services?",
+
+  a: "Managed IT Services outsource IT monitoring, management, maintenance, and support to improve performance, security, uptime, and cost efficiency.",
+},
+
+{
+  q: "How do Managed IT Services improve business security?",
+
+  a: "Managed IT Services improve security through continuous infrastructure monitoring, threat detection, vulnerability management, patch updates, identity and access management, data backup, disaster recovery planning, and compliance support.",
+},
+
+{
+  q: "How do Managed IT Services reduce IT costs?",
+
+  a: "Managed IT Services reduce downtime, automate maintenance, optimize resources, and provide predictable costs while minimizing in-house IT staffing needs.",
+},
+
+{
+  q: "Can Managed IT Services support cloud infrastructure?",
+
+  a: "Yes. Managed IT Services support public, private, hybrid, and multi-cloud environments through monitoring, security, optimization, backups, and disaster recovery.",
+},
 ];
 
 const pad = (n: number) => String(n).padStart(2, "0");

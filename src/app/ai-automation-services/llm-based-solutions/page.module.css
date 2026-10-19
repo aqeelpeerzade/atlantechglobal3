@@ -1,0 +1,203 @@
+/* ==========================================================================
+   LLM-Based Solutions — measured against the Figma frame (1512px wide)
+   Panel 1280px · content 1176px · section padding 96px
+   White / lavender (#f2f3ff) bands alternate; hero has a vertical gradient
+   ========================================================================== */
+.page {
+  --lm-band: #f2f3ff;
+  --lm-tile: #eeeefd;
+  --lm-violet: #630ed4;
+  --lm-accent: #7d3bed;
+  --lm-ink: #171b26;
+  --lm-text: #4a4455;
+  --lm-label: #6e6a7a;
+  --lm-pad: 52px;
+  --lm-shadow: 0 1px 2px rgba(23, 27, 38, 0.04), 0 6px 18px -8px rgba(99, 14, 212, 0.1);
+  background: #fff;
+}
+.page svg { stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.panel { max-width: 1280px; margin: 0 auto; }
+
+.section { padding: 96px var(--lm-pad); }
+.band { background: var(--lm-band); }
+
+.gradText {
+  background: linear-gradient(90deg, #4f46e5 0%, #630ed4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Section heading ---------- */
+.head { margin-bottom: 48px; }
+.eyebrow { margin-bottom: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; line-height: 16px; color: var(--lm-violet); }
+.title { max-width: 720px; font-size: 40px; font-weight: 800; line-height: 46px; letter-spacing: -0.03em; color: var(--lm-ink); }
+.lead { max-width: 800px; margin-top: 8px; font-size: 18px; line-height: 28px; color: var(--lm-text); }
+.label { margin-top: 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; line-height: 20px; color: var(--lm-label); }
+
+.tileWhite,
+.tileTint { display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; color: var(--lm-violet); }
+.tileWhite { background: #fff; box-shadow: 0 1px 3px rgba(23, 27, 38, 0.06); }
+.tileTint { background: #f2f3ff; }
+.tileWhite svg,
+.tileTint svg { width: 18px; height: 18px; }
+
+.primaryBtn { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 32px; border-radius: 10px; background: var(--lm-accent); font-size: 15px; font-weight: 600; color: #fff; box-shadow: 0 12px 24px -10px rgba(125, 59, 237, 0.6); transition: filter 0.2s ease, transform 0.2s ease; }
+.primaryBtn:hover { filter: brightness(1.07); transform: translateY(-1px); }
+.primaryBtn svg { width: 16px; height: 16px; stroke-width: 2; }
+
+/* ---------- Breadcrumb ---------- */
+.crumbBar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 43px; padding: 0 var(--lm-pad); background: #fcfbff; font-size: 13px; color: var(--lm-text); }
+.crumbBar a:hover { color: var(--lm-violet); }
+.crumbBar span[aria-hidden] { color: #9a96a8; }
+.crumbCurrent { font-weight: 600; color: var(--lm-ink); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 96px var(--lm-pad); background: linear-gradient(180deg, #faf8ff 0%, #f1f2fe 50%, #faf8ff 100%); }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1.44fr) minmax(0, 1fr); align-items: center; gap: 48px; }
+.eyebrowPill { display: inline-flex; align-items: center; gap: 8px; height: 28px; padding: 0 12px; border-radius: 999px; background: #eceefc; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; color: var(--lm-violet); }
+.pillDot { flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--lm-accent); }
+.heroTitle { margin: 28px 0 20px; font-size: clamp(40px, 3.97vw, 60px); font-weight: 800; line-height: 1.07; letter-spacing: -0.035em; color: var(--lm-ink); }
+.heroCopy { max-width: 664px; font-size: 18px; line-height: 29px; color: var(--lm-text); }
+.buildLabel { margin: 32px 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; line-height: 16px; color: var(--lm-label); }
+.chipGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; max-width: 666px; margin-bottom: 32px; }
+.chipGrid li { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; overflow: hidden; border-radius: 8px; background: #fff; box-shadow: var(--lm-shadow); font-size: 14px; font-weight: 500; white-space: nowrap; color: var(--lm-ink); }
+.chipGrid li span { overflow: hidden; text-overflow: clip; }
+.chipGrid svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--lm-violet); }
+
+.heroArtCard { padding: 8px; border-radius: 24px; background: #fff; box-shadow: 0 28px 56px -20px rgba(99, 14, 212, 0.25), 0 2px 8px rgba(23, 27, 38, 0.05); }
+.heroCardTop { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 32px; padding: 0 12px; }
+.runtime { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; color: var(--lm-ink); }
+.matrix { font-size: 11px; font-weight: 600; color: var(--lm-violet); }
+.heroImg { display: block; width: 100%; height: auto; aspect-ratio: 446 / 333; object-fit: cover; border-radius: 14px; }
+
+/* ---------- Knowledge pipeline ---------- */
+.pipeGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.pipeCard { padding: 16px 16px 14px; border-radius: 16px; background: var(--lm-band); box-shadow: 0 1px 3px rgba(23, 27, 38, 0.04); }
+.pipeTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.pipeNum { font-size: 32px; font-weight: 800; line-height: 40px; letter-spacing: -0.02em; color: var(--lm-violet); }
+.pipeCard h3 { margin-bottom: 4px; font-size: 18px; font-weight: 700; line-height: 24px; color: var(--lm-ink); }
+.pipeCard p { font-size: 15px; line-height: 24px; color: var(--lm-text); }
+
+/* ---------- Application domains ---------- */
+.bento { display: grid; grid-template-columns: minmax(0, 476fr) minmax(0, 676fr); gap: 24px; }
+.featured { display: flex; flex-direction: column; padding: 32px; border-radius: 24px; background: linear-gradient(145deg, #7d3bed 0%, #4547d9 100%); box-shadow: 0 28px 40px -14px rgba(99, 14, 212, 0.4); color: #fff; }
+.featTop { display: flex; align-items: center; justify-content: space-between; }
+.featTop svg { width: 24px; height: 24px; }
+.featBadge { padding: 5px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.2); font-size: 11px; font-weight: 800; letter-spacing: 0.06em; line-height: 16px; }
+.featured h3 { margin-top: 36px; font-size: 40px; font-weight: 800; line-height: 48px; letter-spacing: -0.03em; }
+.featured p { max-width: 380px; margin-top: 8px; font-size: 20px; line-height: 29px; color: rgba(255, 255, 255, 0.85); }
+.featFoot { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 32px; font-size: 14px; font-weight: 500; }
+.greenDot { width: 10px; height: 10px; border-radius: 50%; background: #34d399; }
+
+.bentoRight { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.useCard { display: flex; flex-direction: column; justify-content: space-between; padding: 24px; border-radius: 16px; background: #fff; box-shadow: var(--lm-shadow); }
+.useTop { display: flex; align-items: flex-start; justify-content: space-between; }
+.useNum { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: #77737f; }
+.useText { margin-top: auto; }
+.useCard h3 { margin-bottom: 4px; font-size: 20px; font-weight: 700; line-height: 28px; letter-spacing: -0.01em; color: var(--lm-ink); }
+.useCard p { font-size: 15px; line-height: 24px; color: var(--lm-text); }
+
+/* ---------- RAG ---------- */
+.chain { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 53px; padding: 0 32px; border-radius: 16px; background: var(--lm-band); box-shadow: 0 1px 3px rgba(23, 27, 38, 0.04); }
+.chain li { display: contents; }
+.chainItem { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; white-space: nowrap; color: var(--lm-ink); }
+.chainItem svg { width: 16px; height: 16px; color: var(--lm-violet); }
+.chainArrow { display: flex; color: #77737f; }
+.chainArrow svg { width: 16px; height: 16px; }
+
+.ragGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 16px; margin-top: 48px; }
+.ragGrid li { display: flex; flex-direction: column; justify-content: space-between; height: 84px; padding: 16px; border-radius: 16px; background: var(--lm-band); box-shadow: 0 1px 3px rgba(23, 27, 38, 0.04); }
+.ragGrid svg { width: 20px; height: 20px; color: var(--lm-violet); }
+.ragGrid h3 { font-size: 18px; font-weight: 600; line-height: 24px; letter-spacing: -0.01em; color: var(--lm-ink); }
+.noteBar { max-width: none; margin-top: 48px; padding: 24px 32px; border-radius: 16px; background: #ebedfc; font-size: 18px; font-weight: 500; line-height: 28px; text-align: center; color: var(--lm-ink); }
+.noteBar { text-wrap: balance; }
+
+/* ---------- Integrations ---------- */
+.integGrid { display: grid; grid-template-columns: 376px minmax(0, 1fr); align-items: center; gap: 24px; }
+.core { display: flex; flex-direction: column; align-items: center; padding: 32px; border-radius: 24px; background: #fff; text-align: center; box-shadow: 0 2px 8px rgba(23, 27, 38, 0.05), 0 24px 40px -24px rgba(99, 14, 212, 0.3); }
+.coreIcon { display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; margin-bottom: 16px; border-radius: 20px; background: linear-gradient(145deg, #4f46e5 0%, #630ed4 100%); color: #fff; box-shadow: 0 12px 24px -8px rgba(99, 14, 212, 0.5); }
+.coreIcon svg { width: 38px; height: 38px; }
+.core h3 { font-size: 24px; font-weight: 700; line-height: 30px; letter-spacing: -0.02em; color: var(--lm-ink); }
+.core p { max-width: 290px; margin-top: 4px; font-size: 14px; line-height: 20px; color: var(--lm-text); }
+.coreTag { display: inline-flex; align-items: center; gap: 8px; height: 24px; margin-top: 16px; padding: 0 12px; border-radius: 999px; background: var(--lm-band); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; color: var(--lm-violet); }
+.integChips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px 12px; }
+.integChips li { min-height: 110px; padding: 16px; border-radius: 16px; background: #fff; box-shadow: var(--lm-shadow); }
+.integChips svg { width: 20px; height: 20px; margin-bottom: 14px; color: var(--lm-violet); }
+.integChips h3 { font-size: 20px; font-weight: 700; line-height: 26px; letter-spacing: -0.01em; color: var(--lm-ink); }
+
+/* ---------- Governance ---------- */
+.controlGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.controlCard { padding: 24px; border-radius: 16px; background: var(--lm-band); box-shadow: 0 1px 3px rgba(23, 27, 38, 0.04); }
+.controlCard h3 { margin: 24px 0 4px; font-size: 20px; font-weight: 700; line-height: 24px; color: var(--lm-ink); }
+.controlCard p { font-size: 15px; line-height: 24px; color: var(--lm-text); }
+
+/* ---------- FAQ ---------- */
+.faqGrid { display: grid; grid-template-columns: minmax(0, 462px) minmax(0, 1fr); align-items: start; gap: 48px; }
+.faqCard { padding: 32px; border-radius: 24px; background: #fff; box-shadow: var(--lm-shadow); }
+.faqCard .eyebrow { margin-bottom: 16px; }
+.faqCard .title { font-size: 40px; }
+.faqLead { margin-top: 12px; font-size: 20px; line-height: 29px; color: var(--lm-text); }
+.faqBtn { height: 44px; margin-top: 70px; padding: 0 24px; border-radius: 10px; font-size: 14px; }
+.faqBtn svg { width: 14px; height: 14px; }
+
+.faqList { display: grid; gap: 13px; }
+.faqItem { border-radius: 16px; background: #fff; box-shadow: 0 1px 3px rgba(23, 27, 38, 0.05); }
+.faqItem h3 { margin: 0; font-size: inherit; }
+.faqQ { display: flex; align-items: center; gap: 16px; width: 100%; padding: 22px 24px; border: 0; background: none; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.faqText { flex: 1; font-size: 18px; font-weight: 700; line-height: 28px; letter-spacing: -0.01em; color: var(--lm-ink); pointer-events: none; }
+.faqChevron { width: 16px; height: 16px; flex-shrink: 0; color: var(--lm-violet); stroke-width: 2.2; transition: transform 0.25s ease; pointer-events: none; }
+.faqOpen .faqChevron { transform: rotate(180deg); }
+.faqA { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.faqOpen .faqA { grid-template-rows: 1fr; }
+.faqA > div { min-height: 0; overflow: hidden; visibility: hidden; transition: visibility 0.3s ease; }
+.faqOpen .faqA > div { visibility: visible; }
+.faqA p { padding: 2px 24px 24px; font-size: 16px; line-height: 24px; color: var(--lm-text); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1180px) {
+  .page { --lm-pad: 32px; }
+  .pipeGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .controlGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .chain { flex-wrap: wrap; justify-content: center; padding: 14px 20px; }
+}
+@media (max-width: 1023px) {
+  .heroGrid,
+  .faqGrid,
+  .integGrid { grid-template-columns: minmax(0, 1fr); }
+  .heroArtCard { max-width: 520px; }
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .featured { min-height: 360px; }
+  .ragGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .chipGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 420px; }
+  .title,
+  .faqCard .title { font-size: 34px; line-height: 40px; }
+}
+@media (max-width: 760px) {
+  .integChips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pipeGrid,
+  .controlGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bentoRight { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+}
+@media (max-width: 640px) {
+  .page { --lm-pad: 16px; }
+  .section,
+  .hero { padding-top: 56px; padding-bottom: 56px; }
+  .head { margin-bottom: 32px; }
+  .title,
+  .faqCard .title { font-size: 28px; line-height: 34px; }
+  .heroCopy,
+  .faqLead { font-size: 16px; line-height: 26px; }
+  .pipeGrid,
+  .controlGrid,
+  .ragGrid { grid-template-columns: minmax(0, 1fr); }
+  .featured h3 { font-size: 32px; line-height: 38px; }
+  .featured p { font-size: 17px; line-height: 26px; }
+  .noteBar { padding: 18px 20px; font-size: 16px; line-height: 24px; }
+  .faqCard { padding: 24px; }
+  .faqBtn { margin-top: 32px; }
+  .faqQ { padding: 18px; }
+  .faqText { font-size: 16px; line-height: 24px; }
+  .faqA p { padding: 2px 18px 20px; font-size: 15px; }
+  .primaryBtn { width: 100%; justify-content: center; }
+}

@@ -7,16 +7,17 @@ const COLUMNS = [
   {
     title: "Capabilities",
     links: [
-      { label: "Digital Transformation", href: "/#services" },
-      { label: "Cloud Engineering", href: "/#services" },
-      { label: "AI & Automation", href: "/#services" },
-      { label: "Data Engineering", href: "/#services" },
+      { label: "Digital Transformation", href: "/digital-transformation" },
+      { label: "Cloud Engineering", href: "/cloud-engineering" },
+      { label: "AI & Automation", href: "/ai-automation" },
+      { label: "Product Engineering", href: "/product-engineering" },
      { label: "Data Analytics", href: "/data-analytics" },
    { label: "Managed Services", href: "/managed-services" },
    
 
     ],
   },
+  
   {
     title: "Industries",
     links: [
@@ -36,7 +37,7 @@ const COLUMNS = [
       { label: "Success Stories", href: "/#work" },
       // { label: "FAQ", href: "/#faq" },
       { label: "Why Us", href: "/why-us" },
-      { label: "Careers", href: "/contact" },
+      { label: "Careers", href: "/careers" },
     ],
   },
   {

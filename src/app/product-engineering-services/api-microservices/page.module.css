@@ -1,0 +1,193 @@
+/* ==========================================================================
+   API & Microservices — measured against the Figma frame
+   Panel 1280px · content 1176px · section padding 96px
+   White and #faf8ff bands alternate; hero has soft violet glows
+   ========================================================================== */
+.page {
+  --pe-pale: #faf8ff;
+  --pe-card: #f2f3ff;
+  --pe-tile: #ebedfc;
+  --pe-violet: #630ed4;
+  --pe-accent: #7d3bed;
+  --pe-ink: #171b26;
+  --pe-text: #4a4455;
+  --pe-pad: 52px;
+  --pe-mono: "Courier New", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --pe-shadow: 0 1px 2px rgba(23, 27, 38, 0.04), 0 6px 18px -8px rgba(99, 14, 212, 0.1);
+  background: #fff;
+}
+.page svg { stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.panel { max-width: 1280px; margin: 0 auto; }
+.section { padding: 96px var(--pe-pad); }
+.sectionFaq { padding-bottom: 80px; background: var(--pe-pale); }
+.band { background: var(--pe-pale); }
+
+.gradText { background: linear-gradient(90deg, #630ed4 0%, #4f46e5 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pillDot { flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--pe-accent); }
+
+/* ---------- Section heading ---------- */
+.head { margin-bottom: 56px; }
+.title { max-width: 800px; font-size: 40px; font-weight: 800; line-height: 46px; letter-spacing: -0.03em; color: var(--pe-ink); }
+.lead { max-width: 640px; margin-top: 8px; font-size: 18px; line-height: 28px; color: var(--pe-text); }
+.accent { margin-top: 10px; font-size: 18px; font-weight: 700; line-height: 28px; color: var(--pe-violet); }
+.inkLabel { margin-top: 14px; font-size: 16px; font-weight: 600; line-height: 24px; color: var(--pe-ink); }
+.monoSub { margin-top: 6px; font-family: var(--pe-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--pe-violet); }
+.headCenter { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.headCenter .title { max-width: 860px; margin-left: auto; margin-right: auto; }
+.headCenter .lead { margin-left: auto; margin-right: auto; }
+.headCenter .accent,
+.headCenter .inkLabel { margin-top: 6px; }
+.pillCenter { display: inline-flex; align-items: center; min-height: 28px; padding: 4px 16px; border-radius: 999px; background: var(--pe-tile); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--pe-violet); }
+
+.tile32 { display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px; background: var(--pe-tile); color: var(--pe-violet); }
+.tile32 svg { width: 18px; height: 18px; }
+
+.solidBtn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 28px; border-radius: 10px; background: var(--pe-violet); font-size: 15px; font-weight: 500; color: #fff; box-shadow: 0 12px 24px -10px rgba(99, 14, 212, 0.55); transition: filter 0.2s ease, transform 0.2s ease; }
+.solidBtn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.solidBtn svg { width: 16px; height: 16px; stroke-width: 2; }
+
+/* ---------- Hero ---------- */
+.heroWrap {
+  background:
+    radial-gradient(520px 420px at 0% 18%, rgba(236, 226, 253, 0.9), transparent 70%),
+    radial-gradient(560px 460px at 92% 88%, rgba(226, 219, 253, 0.8), transparent 70%),
+    #f8f7ff;
+}
+.crumbBar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 43px; padding: 0 var(--pe-pad); background: rgba(246, 247, 255, 0.9); font-size: 13px; color: var(--pe-text); }
+.crumbBar a:hover { color: var(--pe-violet); }
+.crumbBar span[aria-hidden] { color: #9a96a8; }
+.crumbCurrent { font-weight: 600; color: var(--pe-violet); }
+.hero { padding: 72px var(--pe-pad) 96px; }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; gap: 48px; }
+.eyebrowPill { display: inline-flex; align-items: center; gap: 8px; min-height: 28px; padding: 0 12px; border-radius: 999px; background: #fff; box-shadow: 0 1px 3px rgba(23, 27, 38, 0.06); font-size: 12px; font-weight: 700; letter-spacing: 0.02em; color: var(--pe-violet); }
+.heroTitle { margin: 16px 0 12px; max-width: 640px; font-size: clamp(40px, 3.97vw, 60px); font-weight: 800; line-height: 1.07; letter-spacing: -0.035em; color: var(--pe-ink); }
+.heroCopy { max-width: 664px; font-size: 18px; line-height: 29px; color: var(--pe-text); }
+.chipsHead { margin: 28px 0 14px; font-size: 18px; font-weight: 600; line-height: 24px; color: var(--pe-ink); }
+.chipGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 666px; margin-bottom: 32px; }
+.chipGrid li { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 10px 16px; border-radius: 10px; background: #fff; box-shadow: var(--pe-shadow); font-size: 14px; font-weight: 500; line-height: 20px; color: var(--pe-ink); }
+.chipGrid svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--pe-violet); }
+
+.heroArtCard { padding: 8px; border-radius: 20px; background: #fff; box-shadow: 0 28px 56px -20px rgba(125, 59, 237, 0.3), 0 2px 8px rgba(23, 27, 38, 0.05); }
+.heroImgWrap { position: relative; }
+.heroImg { display: block; width: 100%; height: auto; aspect-ratio: 446 / 380; object-fit: cover; border-radius: 14px; }
+.heroOverlay { position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.9); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.heroOverlay svg { width: 14px; height: 14px; margin-left: auto; flex-shrink: 0; color: var(--pe-violet); }
+.overlayText { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; line-height: 16px; color: var(--pe-ink); }
+
+/* ---------- Integration diagram ---------- */
+.diagram { max-width: 880px; margin: 0 auto; }
+.nodeRow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.nodeRow li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 120px; padding: 20px; border-radius: 16px; background: #fff; box-shadow: var(--pe-shadow); border: 1px solid #ece9f8; font-size: 15px; font-weight: 600; text-align: center; color: var(--pe-ink); }
+.arrowRow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 16px 0; justify-items: center; color: var(--pe-violet); }
+.arrowRow svg { width: 20px; height: 20px; stroke-width: 2; }
+.spine { padding: 32px 40px; border-radius: 20px; background: linear-gradient(90deg, #630ed4 0%, #4547d9 100%); text-align: center; box-shadow: 0 20px 40px -16px rgba(79, 70, 229, 0.55); }
+.spinePill { display: inline-flex; align-items: center; height: 24px; padding: 0 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.2); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #fff; }
+.spine h3 { margin-top: 12px; font-size: 24px; font-weight: 800; line-height: 32px; letter-spacing: -0.01em; color: #fff; }
+.spine p { max-width: 560px; margin: 8px auto 0; font-size: 14px; line-height: 22px; color: rgba(255, 255, 255, 0.85); }
+
+/* ---------- Microservices ---------- */
+.msGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px) minmax(0, 1fr); align-items: center; gap: 24px; }
+.msCol { display: grid; gap: 16px; }
+.msCol li { display: flex; align-items: center; gap: 14px; min-height: 76px; padding: 14px 20px; border-radius: 14px; background: #fff; box-shadow: var(--pe-shadow); font-size: 16px; font-weight: 600; line-height: 22px; color: var(--pe-ink); }
+.core { display: flex; flex-direction: column; align-items: center; padding: 28px 20px; border: 2px solid #c9b4f0; border-radius: 20px; background: #fff; text-align: center; box-shadow: 0 24px 40px -16px rgba(99, 14, 212, 0.3); }
+.coreIcon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px; background: var(--pe-violet); color: #fff; }
+.coreIcon svg { width: 24px; height: 24px; }
+.coreLabel { margin-top: 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--pe-violet); }
+.core h3 { margin-top: 4px; font-size: 22px; font-weight: 800; line-height: 28px; letter-spacing: -0.01em; color: var(--pe-ink); }
+.coreSub { margin-top: 6px; max-width: 220px; font-size: 12px; line-height: 18px; color: var(--pe-text); }
+.coreDots { display: inline-flex; gap: 6px; margin-top: 14px; }
+.coreDots i { width: 6px; height: 6px; border-radius: 50%; background: #d4cdea; }
+.coreDots i:first-child,
+.coreDots i:nth-child(2) { background: var(--pe-violet); }
+
+/* ---------- Lifecycle ---------- */
+.lifeGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.lifeGrid li { display: flex; flex-direction: column; min-height: 230px; padding: 24px; border-radius: 16px; background: #fff; box-shadow: var(--pe-shadow); border: 1px solid #ece9f8; }
+.lifeTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.lifeNum { font-size: 28px; font-weight: 800; line-height: 32px; letter-spacing: -0.02em; color: var(--pe-violet); }
+.lifeIcon { display: flex; color: #8a86a0; }
+.lifeIcon svg { width: 18px; height: 18px; }
+.lifeGrid h3 { font-size: 18px; font-weight: 700; line-height: 26px; color: var(--pe-ink); }
+.lifeGrid p { flex: 1; margin-top: 6px; font-size: 13px; line-height: 20px; color: var(--pe-text); }
+.lifeBar { display: block; height: 3px; margin-top: 20px; border-radius: 999px; background: linear-gradient(90deg, #630ed4, #7d3bed); }
+
+/* ---------- Security ---------- */
+.secGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.secGrid li { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-height: 120px; padding: 20px; border-radius: 16px; background: #fff; box-shadow: var(--pe-shadow); border: 1px solid #ece9f8; font-size: 16px; font-weight: 600; line-height: 22px; color: var(--pe-ink); }
+
+/* ---------- Where it fits ---------- */
+.fitList { display: grid; gap: 16px; }
+.fitList li { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 88px; padding: 16px 28px; border-radius: 16px; background: #fff; box-shadow: var(--pe-shadow); border: 1px solid #ece9f8; }
+.fitLeft { display: flex; align-items: center; gap: 20px; }
+.fitLeft h3 { font-size: 22px; font-weight: 600; line-height: 30px; letter-spacing: -0.01em; color: var(--pe-ink); }
+.fitRight { display: inline-flex; align-items: center; gap: 16px; font-size: 14px; line-height: 20px; text-align: right; color: var(--pe-text); }
+.fitRight svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--pe-violet); stroke-width: 2; }
+
+/* ---------- FAQ ---------- */
+.faqTitle { max-width: 800px; margin-bottom: 56px; }
+.faqGrid { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: start; gap: 48px; }
+.desk { padding: 32px; border-radius: 20px; background: var(--pe-card); }
+.deskIcon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px; background: var(--pe-violet); color: #fff; }
+.deskIcon svg { width: 22px; height: 22px; }
+.deskEyebrow { margin-top: 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--pe-violet); }
+.desk h3 { margin-top: 4px; font-size: 22px; font-weight: 700; line-height: 30px; letter-spacing: -0.01em; color: var(--pe-ink); }
+.desk p:not(.deskEyebrow) { margin: 8px 0 24px; font-size: 15px; line-height: 24px; color: var(--pe-text); }
+.deskBtn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 44px; padding: 0 20px; border-radius: 8px; background: var(--pe-violet); font-size: 14px; font-weight: 500; color: #fff; transition: filter 0.2s ease; }
+.deskBtn:hover { filter: brightness(1.1); }
+.deskBtn svg { width: 14px; height: 14px; stroke-width: 2; }
+.faqList { display: grid; gap: 16px; }
+.faqItem { border: 1px solid #ece9f8; border-radius: 12px; background: #fff; }
+.faqItem h3 { margin: 0; font-size: inherit; }
+.faqQ { display: flex; align-items: center; gap: 16px; width: 100%; padding: 20px 24px; border: 0; background: none; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.faqText { flex: 1; font-size: 17px; font-weight: 700; line-height: 26px; letter-spacing: -0.01em; color: var(--pe-ink); pointer-events: none; }
+.faqChevron { width: 16px; height: 16px; flex-shrink: 0; color: var(--pe-violet); stroke-width: 2.2; transform: rotate(-90deg); transition: transform 0.25s ease; pointer-events: none; }
+.faqOpen .faqChevron { transform: rotate(0deg); }
+.faqA { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.faqOpen .faqA { grid-template-rows: 1fr; }
+.faqA > div { min-height: 0; overflow: hidden; visibility: hidden; transition: visibility 0.3s ease; }
+.faqOpen .faqA > div { visibility: visible; }
+.faqA p { padding: 2px 24px 22px; font-size: 15px; line-height: 24px; color: var(--pe-text); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1180px) {
+  .page { --pe-pad: 32px; }
+  .lifeGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .secGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1023px) {
+  .heroGrid,
+  .faqGrid { grid-template-columns: minmax(0, 1fr); }
+  .heroArtCard { max-width: 520px; }
+  .msGrid { grid-template-columns: minmax(0, 1fr); }
+  .core { order: -1; }
+  .title { font-size: 34px; line-height: 40px; }
+}
+@media (max-width: 760px) {
+  .nodeRow,
+  .arrowRow { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .arrowRow { display: none; }
+  .nodeRow { margin: 12px 0; }
+  .lifeGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fitList li { flex-direction: column; align-items: flex-start; }
+  .fitRight { text-align: left; }
+}
+@media (max-width: 640px) {
+  .page { --pe-pad: 16px; }
+  .section { padding-top: 56px; padding-bottom: 56px; }
+  .hero { padding: 48px var(--pe-pad) 56px; }
+  .head { margin-bottom: 32px; }
+  .title { font-size: 28px; line-height: 34px; }
+  .heroCopy { font-size: 16px; line-height: 26px; }
+  .chipGrid,
+  .lifeGrid,
+  .secGrid { grid-template-columns: minmax(0, 1fr); }
+  .spine { padding: 24px 20px; }
+  .spine h3 { font-size: 18px; line-height: 26px; }
+  .fitLeft h3 { font-size: 18px; }
+  .faqTitle { margin-bottom: 32px; }
+  .faqQ { padding: 18px; }
+  .faqText { font-size: 16px; line-height: 24px; }
+  .faqA p { padding: 2px 18px 20px; font-size: 15px; }
+  .solidBtn,
+  .deskBtn { width: 100%; }
+}

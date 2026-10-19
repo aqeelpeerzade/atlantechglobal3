@@ -1,0 +1,212 @@
+/* ---------- Page tokens ---------- */
+.page {
+  --cr-pale: #f9f8ff;
+  --cr-tint: #f2f2fe;
+  --cr-violet: #6d28d9;
+  --cr-ink: #14161f;
+  --cr-text: #4a4f5e;
+  --cr-line: #ebe8f7;
+}
+/* Figma content width is 1216px, narrower than the site-wide container */
+.page :global(.container) { max-width: calc(1216px + 2 * var(--gutter)); }
+
+.section { padding: clamp(56px, 8vw, 96px) 0; }
+.paleSection { background: var(--cr-pale); }
+.tintSection { background: var(--cr-tint); }
+
+.gradText {
+  background: linear-gradient(90deg, #6d28d9 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow { margin-bottom: 10px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.08em; color: var(--cr-violet); }
+.eyebrowDark { margin-bottom: 8px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; color: #4a4f5e; }
+.title { font-size: clamp(28px, 3.4vw, 42px); font-weight: 800; line-height: 1.1; letter-spacing: -0.035em; color: var(--cr-ink); }
+.subTitle { font-size: clamp(20px, 2vw, 25px); font-weight: 700; letter-spacing: -0.02em; color: var(--cr-ink); }
+.lead { max-width: 640px; margin-top: 16px; font-size: clamp(15px, 1.3vw, 17px); line-height: 1.65; color: var(--cr-text); }
+
+/* ---------- Buttons ---------- */
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border-radius: 10px;
+  background: #7c3aed;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  box-shadow: 0 12px 24px -12px rgba(109, 40, 217, 0.65);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.primaryBtn:hover { background: #6d28d9; transform: translateY(-1px); }
+.primaryBtn svg { width: 14px; height: 14px; }
+.lightBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 28px;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--cr-violet);
+  box-shadow: 0 4px 14px -8px rgba(60, 30, 140, 0.35);
+  transition: box-shadow 0.2s ease;
+}
+.lightBtn:hover { box-shadow: 0 8px 20px -8px rgba(60, 30, 140, 0.45); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 7vw, 88px);
+  background:
+    radial-gradient(ellipse 560px 420px at 8% 90%, rgba(196, 181, 253, 0.28), transparent 70%),
+    linear-gradient(180deg, #f6f4ff 0%, #faf8ff 100%);
+}
+.heroGrid { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(32px, 5vw, 72px); }
+.eyebrowPill { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: #f0eefb; font-size: 11.5px; font-weight: 700; letter-spacing: 0.05em; color: #3a3f4d; }
+.pillDot { width: 7px; height: 7px; border-radius: 50%; background: var(--cr-violet); }
+.heroTitle { margin: 28px 0 24px; font-size: clamp(40px, 5vw, 66px); font-weight: 800; line-height: 1.04; letter-spacing: -0.04em; color: var(--cr-ink); }
+.heroCopy { max-width: 540px; margin-bottom: 34px; font-size: clamp(15px, 1.4vw, 18px); line-height: 1.65; color: var(--cr-text); }
+.heroActions { display: flex; flex-wrap: wrap; gap: 14px; }
+.heroTags { display: flex; flex-wrap: wrap; gap: 14px 36px; margin-top: 56px; }
+.heroTags li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #5b6170; }
+.heroTags svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--cr-violet); stroke-width: 1.8; }
+.heroTags li:nth-child(2) svg { color: #4f46e5; }
+
+.heroArt { position: relative; padding: 14px 22px 14px 0; }
+.heroArt > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 30px 60px -30px rgba(50, 30, 120, 0.45);
+}
+.floatCard {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px 12px 14px;
+  border-radius: 10px;
+  background: #fff;
+  white-space: nowrap;
+  box-shadow: 0 14px 30px -14px rgba(30, 20, 80, 0.35);
+}
+.floatCard small { display: block; margin-bottom: 2px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; color: var(--cr-violet); }
+.floatCard b { display: block; font-size: 13px; font-weight: 600; color: var(--cr-ink); }
+.floatIcon { display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #f1e9ff; color: var(--cr-violet); }
+.floatIcon svg { width: 15px; height: 15px; stroke-width: 1.8; }
+.floatIconBlue { background: #e7e9ff; color: #4f46e5; }
+.cardTop { top: -6px; right: 0; }
+.cardMid { top: 42%; left: -28px; }
+.cardBottom { right: 24px; bottom: -4px; }
+
+/* ---------- Atlantech way ---------- */
+.wayGrid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(24px, 6vw, 80px); }
+.wayGrid .title { max-width: 520px; }
+.wayCopy { padding-top: 14px; font-size: clamp(15px, 1.3vw, 17px); line-height: 1.7; color: var(--cr-text); }
+
+.quote { position: relative; margin: clamp(36px, 5vw, 60px) 0; padding: clamp(36px, 6vw, 76px) clamp(24px, 8vw, 96px); overflow: hidden; border-radius: 14px; background: #f1f1fe; }
+.quoteBlob { position: absolute; top: 0; left: 14px; width: 18px; height: 18px; border-radius: 0 0 50% 50%; background: #d8d2f7; }
+.quote blockquote { max-width: 720px; font-size: clamp(24px, 3.2vw, 40px); font-style: italic; font-weight: 700; line-height: 1.2; letter-spacing: -0.03em; color: var(--cr-ink); }
+.quote figcaption { display: flex; align-items: center; gap: 14px; margin-top: 22px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; color: #4a4f5e; }
+.quoteBar { width: 24px; height: 2px; background: var(--cr-violet); }
+
+.cultureHead { margin: clamp(48px, 7vw, 80px) 0 28px; }
+.principles { position: relative; display: grid; gap: 32px; }
+.principles::before { content: ""; position: absolute; top: 32px; bottom: 32px; left: 21px; width: 2px; background: linear-gradient(180deg, #6d28d9, #4f46e5); }
+.principles li { position: relative; display: flex; align-items: flex-start; gap: 22px; }
+.principleNum { position: relative; z-index: 1; display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 38px; height: 34px; border-radius: 10px; background: #fff; font-size: 11.5px; font-weight: 800; color: var(--cr-violet); box-shadow: 0 4px 12px -6px rgba(60, 30, 140, 0.35); }
+.principleCard { flex: 1; min-width: 0; padding: 26px 32px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px -6px rgba(60, 30, 140, 0.22); }
+.principleHead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 8px; }
+.principleHead span { font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; color: var(--cr-violet); }
+.principleHead b { font-size: 18px; font-weight: 700; color: var(--cr-ink); }
+.principleCard > p:not(.principleHead) { font-size: 14.5px; color: var(--cr-text); }
+
+/* ---------- Why Atlantech ---------- */
+.reasonGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 4vw, 48px); margin-top: clamp(32px, 5vw, 56px); }
+.reasonCard { padding: 26px 28px 28px; border-radius: 6px; background: #fff; box-shadow: 0 2px 10px -6px rgba(60, 30, 140, 0.2); }
+.reasonTop { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.reasonNum { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: #5b0fd6; }
+.reasonTag { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #3a3f4d; }
+.reasonCard h3 { margin-bottom: 8px; font-size: 18px; font-weight: 700; color: var(--cr-ink); }
+.reasonCard p { font-size: 14px; line-height: 1.6; color: var(--cr-text); }
+
+/* ---------- Growth path ---------- */
+.growthGrid { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; margin-top: clamp(32px, 5vw, 56px); }
+.growthCard { position: relative; padding: 24px; border-radius: 6px; background: #fff; box-shadow: 0 2px 10px -6px rgba(60, 30, 140, 0.2); }
+.growthCard:not(:last-child)::after { content: ""; position: absolute; top: 46px; right: -24px; width: 24px; height: 4px; background: #6556e0; }
+.growthTop { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.growthNum { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; font-size: 14px; font-weight: 800; }
+.step1 { background: #e4e1fd; color: #1e1b4b; }
+.step2 { background: #6366f1; color: #fff; }
+.step3 { background: #ebdfff; color: #3b0764; }
+.step4 { background: #7c3aed; color: #fff; }
+.step5 { background: #9333ea; color: #fff; }
+.growthTag { font-size: 11.5px; font-weight: 800; letter-spacing: 0.08em; color: var(--cr-violet); }
+.growthCard:nth-child(2) .growthTag { color: #4f46e5; }
+.growthCard h3 { margin-bottom: 10px; font-size: 18px; font-weight: 700; line-height: 1.3; color: var(--cr-ink); }
+.growthCard p { font-size: 13px; line-height: 1.6; color: var(--cr-text); }
+
+/* ---------- Open roles ---------- */
+.roles { display: grid; gap: 16px; margin-top: clamp(32px, 5vw, 48px); }
+.roleCard { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 32px; border-radius: 6px; background: #fff; box-shadow: 0 2px 10px -6px rgba(60, 30, 140, 0.2); }
+.roleMain { min-width: 0; }
+.roleMeta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 8px; font-size: 12px; }
+.roleTeam { font-weight: 800; letter-spacing: 0.06em; color: var(--cr-violet); }
+.roleDot { width: 3px; height: 3px; border-radius: 50%; background: #3a3f4d; }
+.roleType { padding: 3px 9px; border-radius: 3px; background: #e4e6f5; font-size: 11px; font-weight: 500; color: #3a3f4d; }
+.roleLoc { display: inline-flex; align-items: center; gap: 4px; color: #3a3f4d; }
+.roleLoc svg { width: 12px; height: 12px; color: var(--cr-violet); stroke-width: 2; }
+.roleCard h3 { font-size: clamp(20px, 2vw, 24px); font-weight: 800; letter-spacing: -0.02em; color: var(--cr-ink); }
+.roleDetail { margin-top: 6px; font-size: 14px; color: var(--cr-text); }
+.roleCard .primaryBtn { flex-shrink: 0; padding: 12px 22px; box-shadow: none; }
+
+/* ---------- CTA ---------- */
+.cta { position: relative; padding: clamp(56px, 8vw, 88px) 0; overflow: hidden; background: #2d313d; text-align: center;margin-bottom:5rem; }
+.cta::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 360px 240px at 50% 55%, rgba(124, 58, 237, 0.4), transparent 70%); }
+.ctaLines { position: absolute; inset: auto 0 0 0; width: 100%; height: 100%; opacity: 0.5; }
+.ctaLines path { fill: none; stroke: #6b6f9a; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.ctaInner { position: relative; }
+.ctaEyebrow { margin-bottom: 14px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; color: #e4e0f5; }
+.cta h2 { font-size: clamp(26px, 3.6vw, 44px); font-weight: 800; line-height: 1.1; letter-spacing: -0.035em; color: #fff; }
+.ctaInner > p:not(.ctaEyebrow) { max-width: 640px; margin: 18px auto 32px; font-size: clamp(14.5px, 1.3vw, 16.5px); line-height: 1.65; color: rgba(232, 228, 246, 0.82); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .growthGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .growthCard::after { display: none; }
+}
+
+@media (max-width: 1023px) {
+  .heroGrid,
+  .wayGrid { grid-template-columns: minmax(0, 1fr); }
+  .heroArt { padding: 14px 0; }
+  .cardMid { left: 8px; }
+  .cardTop { right: 8px; }
+  .cardBottom { right: 16px; }
+  .wayCopy { padding-top: 0; }
+  .reasonGrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .heroTags { margin-top: 36px; }
+  .floatCard { padding: 9px 12px 9px 10px; gap: 9px; }
+  .floatCard b { font-size: 11.5px; }
+  .floatIcon { width: 26px; height: 26px; }
+  .growthGrid { grid-template-columns: minmax(0, 1fr); }
+  .principles::before { left: 18px; }
+  .principles li { gap: 14px; }
+  .principleCard { padding: 20px; }
+  .roleCard { flex-direction: column; align-items: flex-start; padding: 22px 20px; }
+  .heroActions > a { flex: 1 1 100%; justify-content: center; }
+}
+
+
+
