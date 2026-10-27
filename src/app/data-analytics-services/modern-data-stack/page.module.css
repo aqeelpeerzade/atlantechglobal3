@@ -1,0 +1,705 @@
+/* ==========================================================================
+   Modern Data Stack — measured against the Figma frame
+   Panel 1280px · content 1176px · section padding 80–96px
+   Whole page sits on a pale #faf8ff field; cards are white with soft shadow
+   ========================================================================== */
+.page {
+    --pe-pale: #faf8ff;
+    --pe-card: #f2f3ff;
+    --pe-tile: #ebedfc;
+    --pe-violet: #630ed4;
+    --pe-accent: #7d3bed;
+    --pe-ink: #171b26;
+    --pe-text: #4a4455;
+    --pe-pad: 52px;
+    --pe-mono: "Courier New", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --pe-shadow: 0 1px 2px rgba(23, 27, 38, 0.04), 0 6px 18px -8px rgba(99, 14, 212, 0.1);
+    background: #fff;
+}
+
+.page svg {
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.panel {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--pe-pale);
+}
+
+.section {
+    padding: 80px var(--pe-pad);
+}
+
+.sectionFaq {
+    padding-bottom: 96px;
+}
+
+.gradText {
+    background: linear-gradient(90deg, #630ed4 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.pillDot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--pe-accent);
+}
+
+/* ---------- Section heading ---------- */
+.headCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    line-height: 16px;
+    color: var(--pe-violet);
+}
+
+.title {
+    max-width: 560px;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 42px;
+    letter-spacing: -0.03em;
+    color: var(--pe-ink);
+}
+
+.titleLeft {
+    max-width: 400px;
+}
+
+.lead {
+    max-width: 360px;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--pe-text);
+}
+
+.tile36 {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--pe-tile);
+    color: var(--pe-violet);
+}
+
+.tile36 svg {
+    width: 18px;
+    height: 18px;
+}
+
+.solidBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 44px;
+    padding: 0 22px;
+    border-radius: 8px;
+    background: var(--pe-violet);
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 12px 24px -10px rgba(99, 14, 212, 0.55);
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.solidBtn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.solidBtn svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2;
+}
+
+/* ---------- Hero ---------- */
+.heroWrap {
+    background:
+        radial-gradient(520px 420px at 0% 18%, rgba(236, 226, 253, 0.9), transparent 70%),
+        radial-gradient(560px 460px at 92% 88%, rgba(226, 219, 253, 0.8), transparent 70%),
+        #f8f7ff;
+}
+
+.crumbBar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-height: 43px;
+    padding: 0 var(--pe-pad);
+    background: rgba(246, 247, 255, 0.9);
+    font-size: 12px;
+    color: var(--pe-text);
+}
+
+.crumbBar a:hover {
+    color: var(--pe-violet);
+}
+
+.crumbBar span[aria-hidden] {
+    color: #9a96a8;
+}
+
+.crumbCurrent {
+    font-weight: 600;
+    color: var(--pe-ink);
+}
+
+.hero {
+    padding: 48px var(--pe-pad) 96px;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 48px;
+}
+
+.eyebrowPill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 22px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: var(--pe-tile);
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--pe-violet);
+}
+
+.heroTitle {
+    margin: 14px 0 14px;
+    max-width: 520px;
+    font-size: clamp(40px, 3.97vw, 54px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: var(--pe-ink);
+}
+
+.heroCopy {
+    max-width: 480px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--pe-text);
+}
+
+.heroArtCard {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 28px 56px -20px rgba(125, 59, 237, 0.3), 0 2px 8px rgba(23, 27, 38, 0.05);
+}
+
+.heroImg {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 446 / 300;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #ece9f8;
+}
+
+/* ---------- Ecosystem ---------- */
+.ecoGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 48px;
+}
+
+.stackCard {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+}
+
+.stackText {
+    display: grid;
+    gap: 2px;
+}
+
+.stackText b {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    color: var(--pe-ink);
+}
+
+.stackText small {
+    font-size: 10.5px;
+    line-height: 14px;
+    color: var(--pe-text);
+}
+
+.ecoList {
+    display: grid;
+    gap: 14px;
+}
+
+.ecoList li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 56px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--pe-ink);
+}
+
+.tickCircle {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--pe-tile);
+    color: var(--pe-violet);
+}
+
+.tickCircle svg {
+    width: 12px;
+    height: 12px;
+    stroke-width: 2.4;
+}
+
+/* ---------- Services ---------- */
+.serviceGrid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.serviceGrid li {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    padding: 24px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+}
+
+.serviceGrid li:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.serviceGrid li:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+.serviceGrid h3 {
+    margin-top: 28px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--pe-ink);
+}
+
+.serviceGrid p {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--pe-text);
+}
+
+/* ---------- Layers ---------- */
+.layerGrid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.layerGrid li {
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+}
+
+.layerTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    color: #8a86a0;
+}
+
+.layerTop svg {
+    width: 12px;
+    height: 12px;
+    stroke-width: 2.2;
+}
+
+.layerNum {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--pe-tile);
+    font-family: var(--pe-mono);
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--pe-violet);
+}
+
+.layerGrid h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: var(--pe-ink);
+}
+
+.layerGrid p {
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 16px;
+    color: var(--pe-text);
+}
+
+.layerGrid li:last-child .layerTop {
+    color: var(--pe-violet);
+}
+
+/* ---------- Approach ---------- */
+.approachGrid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.approachGrid li {
+    display: flex;
+    flex-direction: column;
+    min-height: 170px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+}
+
+.approachNum {
+    padding: 2px 8px;
+    align-self: flex-start;
+    border-radius: 4px;
+    background: var(--pe-tile);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 26px;
+    color: var(--pe-violet);
+}
+
+.approachGrid p {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--pe-ink);
+}
+
+/* ---------- Benefits ---------- */
+.benefitGrid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.benefitGrid li {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    min-height: 170px;
+    padding: 24px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+}
+
+.benefitGrid li:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.benefitGrid li:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+.benefitGrid h3 {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -0.01em;
+    color: var(--pe-ink);
+}
+
+/* ---------- CTA ---------- */
+.ctaSection {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.ctaCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 72px 32px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #fafaff 0%, #ece9fb 100%);
+    box-shadow: var(--pe-shadow);
+    text-align: center;
+}
+
+.ctaCard h2 {
+    max-width: 420px;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 46px;
+    letter-spacing: -0.03em;
+    color: var(--pe-ink);
+}
+
+/* ---------- FAQ ---------- */
+.faqWrap {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.faqList {
+    display: grid;
+    gap: 14px;
+}
+
+.faqItem {
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+}
+
+.faqItem h3 {
+    margin: 0;
+    font-size: inherit;
+}
+
+.faqQ {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 20px 24px;
+    border: 0;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.faqText {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--pe-ink);
+    pointer-events: none;
+}
+
+.faqToggle {
+    display: flex;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--pe-tile);
+    color: var(--pe-violet);
+    pointer-events: none;
+}
+
+.faqToggle svg {
+    width: 12px;
+    height: 12px;
+    stroke-width: 2.4;
+}
+
+.faqPlusV {
+    transform-origin: center;
+    transition: opacity 0.2s ease;
+}
+
+.faqOpen .faqPlusV {
+    opacity: 0;
+}
+
+.faqA {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.faqOpen .faqA {
+    grid-template-rows: 1fr;
+}
+
+.faqA>div {
+    min-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: visibility 0.3s ease;
+}
+
+.faqOpen .faqA>div {
+    visibility: visible;
+}
+
+.faqA p {
+    padding: 2px 24px 22px;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--pe-text);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1180px) {
+    .page {
+        --pe-pad: 32px;
+    }
+
+    .layerGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .approachGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1023px) {
+
+    .heroGrid,
+    .ecoGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .heroArtCard {
+        max-width: 520px;
+        margin-top: 0;
+    }
+
+    .serviceGrid,
+    .benefitGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .serviceGrid li,
+    .serviceGrid li:nth-child(4),
+    .serviceGrid li:nth-child(5),
+    .benefitGrid li,
+    .benefitGrid li:nth-child(4),
+    .benefitGrid li:nth-child(5) {
+        grid-column: auto;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 38px;
+    }
+}
+
+@media (max-width: 640px) {
+    .page {
+        --pe-pad: 16px;
+    }
+
+    .section {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .hero {
+        padding: 32px var(--pe-pad) 56px;
+    }
+
+    .headCenter {
+        margin-bottom: 32px;
+    }
+
+    .title {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .serviceGrid,
+    .benefitGrid,
+    .layerGrid,
+    .approachGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ctaCard {
+        padding: 48px 20px;
+    }
+
+    .ctaCard h2 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .faqQ {
+        padding: 18px;
+    }
+
+    .faqA p {
+        padding: 2px 18px 20px;
+    }
+
+    .solidBtn {
+        width: 100%;
+    }
+}

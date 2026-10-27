@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { asset } from "@/lib/asset";
-import { CheckIcon } from "@/lib/icons";
+import { ArrowIcon, CheckIcon } from "@/lib/icons";
 import DigitalFaq, { type DigitalFaqItem } from "./DigitalFaq";
 import ServiceExplorer, { type TransformationService } from "./ServiceExplorer";
 import styles from "./page.module.css";
@@ -28,38 +28,114 @@ const highlights = [
 
 const tags = ["Cloud Optimization", "AI Automation", "Modern Engineering", "Enterprise Security"];
 
-const services: TransformationService[] = [
+
+const aicapabilities = [
   {
-    name: "Digital Transformation Consulting",
-    heading: "Digital Transformation Consulting",
-    body: "Our Digital Transformation Consulting Services align technology with business goals, enabling AI, cloud, automation, modernization, efficiency, and sustainable growth.",
-    pillars: ["Agile Delivery", "Scalable Cloud", "Continuous ROI"],
+    title: "Consulting & Strategy",
+    desc: "Our Digital Transformation Consulting Services align technology with business goals, enabling AI, cloud, automation, modernization, efficiency, and sustainable growth.",
+    points: [
+      "Agile Delivery",
+      "Scalable Cloud",
+      "Continuous ROI",
+    ],
+    href: "/digital-transformation-services/consulting-strategy",
   },
   {
-    name: "Business Process Transformation",
-    heading: "Business Process Transformation",
-    body: "Business Transformation Consulting streamlines operations with AI, automation, and digital solutions, improving productivity, collaboration, agility, innovation, and sustainable growth..",
-    pillars: ["Process Automation", "Workflow Orchestration", "Measurable Savings"],
+    title: "Business Process Transformation",
+    desc: "Business Transformation Consulting streamlines operations with AI, automation, and digital solutions, improving productivity, collaboration, agility, innovation, and sustainable growth.",
+    points: [
+      "Process Automation",
+      "Workflow Orchestration",
+      "Measurable Savings",
+    ],
+    href: "/digital-transformation-services/application-modernization",
   },
   {
-    name: "Application Modernization",
-    heading: "Application Modernization",
-    body: "Modernize legacy applications into secure, scalable cloud-native platforms, reducing technical debt, enhancing performance, accelerating deployment, and improving user experience. .",
-    pillars: ["Cloud-Native Design", "Microservices & APIs", "Zero-Downtime Migration"],
+    title: "Application Modernization",
+    desc: "Modernize legacy applications into secure, scalable cloud-native platforms, reducing technical debt, enhancing performance, accelerating deployment, and improving user experience.",
+    points: [
+      "Cloud-Native Design",
+      "Microservices & APIs",
+      "Zero-Downtime Migration",
+    ],
+    href: "/digital-transformation-services/application-modernization",
   },
   {
-    name: "Enterprise Applications & ERP",
-    heading: "Enterprise Applications & ERP",
-    body: "Enterprise application and ERP solutions streamline operations, improve visibility, automate workflows, enable data-driven decisions, enhance productivity, and support scalable growth. ",
-    pillars: ["ERP Implementation", "System Integration", "Unified Data"],
+    title: "Enterprise Applications & ERP",
+    desc: "Enterprise application and ERP solutions streamline operations, improve visibility, automate workflows, enable data-driven decisions, enhance productivity, and support scalable growth.",
+    points: [
+      "ERP Implementation",
+      "System Integration",
+      "Unified Data",
+    ],
+    href: "/digital-transformation-services/enterprise-applications-erp",
   },
   {
-    name: "Digital Experience",
-    heading: "Digital Experience",
-    body: "Create intuitive websites, portals, mobile apps, and digital platforms using modern UX and technology to boost engagement, satisfaction, and loyalty.                         .",
-    pillars: ["UX & Design", "Omnichannel Delivery", "Experience Analytics"],
+    title: "Digital Experience & Digital Commerce",
+    desc: "Create intuitive websites, portals, mobile apps, and digital platforms using modern UX and technology to boost engagement, satisfaction, and loyalty.",
+    points: [
+      "UX & Design",
+      "Omnichannel Delivery",
+      "Experience Analytics",
+    ],
+    href: "/digital-transformation-services/digital-experience-commerce",
+  },
+  {
+    title: "Digital Growth",
+    desc: "Drive measurable business growth through digital marketing, SEO, performance campaigns, and data-driven strategies to increase visibility, generate leads, and maximize conversions.",
+    points: [
+      "SEO & Content Strategy",
+      "Performance Marketing",
+      "Growth Analytics",
+    ],
+    href: "/digital-transformation-services/digital-growth",
   },
 ];
+// const services: TransformationService[] = [
+//   {
+//     name: "Consulting & Strategy",
+//     heading: "Consulting & Strategy",
+//     body: "Our Digital Transformation Consulting Services align technology with business goals, enabling AI, cloud, automation, modernization, efficiency, and sustainable growth.",
+//     pillars: ["Agile Delivery", "Scalable Cloud", "Continuous ROI"],
+//     href: "/digital-transformation-services/consulting-strategy"
+//   },
+//   {
+//     name: "Business Process Transformation",
+//     heading: "Business Process Transformation",
+//     body: "Business Transformation Consulting streamlines operations with AI, automation, and digital solutions, improving productivity, collaboration, agility, innovation, and sustainable growth..",
+//     pillars: ["Process Automation", "Workflow Orchestration", "Measurable Savings"],
+//     href: "/digital-transformation-services/application-modernization"
+//   },
+//   {
+//     name: "Application Modernization",
+//     heading: "Application Modernization",
+//     body: "Modernize legacy applications into secure, scalable cloud-native platforms, reducing technical debt, enhancing performance, accelerating deployment, and improving user experience. .",
+//     pillars: ["Cloud-Native Design", "Microservices & APIs", "Zero-Downtime Migration"],
+//     href: "/digital-transformation-services/application-modernization"
+//   },
+//   {
+//     name: "Enterprise Applications & ERP",
+//     heading: "Enterprise Applications & ERP",
+//     body: "Enterprise application and ERP solutions streamline operations, improve visibility, automate workflows, enable data-driven decisions, enhance productivity, and support scalable growth. ",
+//     pillars: ["ERP Implementation", "System Integration", "Unified Data"],
+//     href: "/digital-transformation-services/enterprise-applications-erp"
+//   },
+//   {
+//     name: "Digital Experience & Digital Commerce",
+//     heading: "Digital Experience & Digital Commerce",
+//     body: "Create intuitive websites, portals, mobile apps, and digital platforms using modern UX and technology to boost engagement, satisfaction, and loyalty.                         .",
+//     pillars: ["UX & Design", "Omnichannel Delivery", "Experience Analytics"],
+//     href: "/digital-transformation-services/digital-experience-commerce"
+//   },
+//   {
+//     name: "Digital Growth",
+//     heading: "Digital Growth",
+//     body: "Drive measurable business growth through digital marketing, SEO, performance campaigns, and data-driven strategies to increase visibility, generate leads, and maximize conversions.",
+//     pillars: ["SEO & Content Strategy", "Performance Marketing", "Growth Analytics"],
+
+//     href: "/digital-transformation-services/digital-growth"
+//   },
+// ];
 
 const technologies = [
   {
@@ -210,43 +286,43 @@ const strategy = [
 
 const faqs: DigitalFaqItem[] = [
   {
-  q: "What are Digital Transformation Services?",
+    q: "What are Digital Transformation Services?",
 
-  a: "Digital Transformation Services help organizations modernize business operations using technologies like AI, cloud computing, automation, data analytics, and enterprise software. These services improve operational efficiency, customer experiences, scalability, and decision-making while enabling businesses to adapt quickly to changing market demands and achieve long-term digital growth.",
+    a: "Digital Transformation Services help organizations modernize business operations using technologies like AI, cloud computing, automation, data analytics, and enterprise software. These services improve operational efficiency, customer experiences, scalability, and decision-making while enabling businesses to adapt quickly to changing market demands and achieve long-term digital growth.",
 
-},
+  },
 
-{
+  {
 
-  q: "Why is digital transformation important for businesses?",
+    q: "Why is digital transformation important for businesses?",
 
-  a: "Digital transformation is important because it helps businesses improve productivity, reduce operational costs, automate manual processes, enhance customer experiences, and make data-driven decisions. By adopting modern technologies, organizations become more agile, competitive, and better prepared for future market changes and evolving customer expectations.",
+    a: "Digital transformation is important because it helps businesses improve productivity, reduce operational costs, automate manual processes, enhance customer experiences, and make data-driven decisions. By adopting modern technologies, organizations become more agile, competitive, and better prepared for future market changes and evolving customer expectations.",
 
-},
+  },
 
-{
+  {
 
-  q: "What technologies are used in digital transformation?",
+    q: "What technologies are used in digital transformation?",
 
-  a: "Digital transformation typically includes Artificial Intelligence (AI), Machine Learning (ML), cloud computing, automation, IoT, data analytics, cybersecurity, enterprise applications, APIs, and modern software platforms. These technologies work together to streamline operations, optimize workflows, improve collaboration, and accelerate business innovation.",
+    a: "Digital transformation typically includes Artificial Intelligence (AI), Machine Learning (ML), cloud computing, automation, IoT, data analytics, cybersecurity, enterprise applications, APIs, and modern software platforms. These technologies work together to streamline operations, optimize workflows, improve collaboration, and accelerate business innovation.",
 
-},
+  },
 
-{
+  {
 
-  q: "How do Digital Transformation Services improve business performance?",
+    q: "How do Digital Transformation Services improve business performance?",
 
-  a: "Digital Transformation Services improve business performance by automating repetitive tasks, modernizing legacy systems, integrating enterprise applications, and providing real-time business insights. These improvements increase operational efficiency, reduce costs, enhance employee productivity, and enable organizations to deliver better customer experiences while supporting sustainable business growth.",
+    a: "Digital Transformation Services improve business performance by automating repetitive tasks, modernizing legacy systems, integrating enterprise applications, and providing real-time business insights. These improvements increase operational efficiency, reduce costs, enhance employee productivity, and enable organizations to deliver better customer experiences while supporting sustainable business growth.",
 
-},
+  },
 
-{
+  {
 
-  q: "How do I choose the right Digital Transformation partner?",
+    q: "How do I choose the right Digital Transformation partner?",
 
-  a: "Choose a Digital Transformation partner with expertise in consulting, cloud, AI, application modernization, enterprise software, and managed services. The right partner should understand your industry, provide scalable technology solutions, follow proven implementation methodologies, and offer continuous support to ensure measurable business outcomes and long-term success.",
+    a: "Choose a Digital Transformation partner with expertise in consulting, cloud, AI, application modernization, enterprise software, and managed services. The right partner should understand your industry, provide scalable technology solutions, follow proven implementation methodologies, and offer continuous support to ensure measurable business outcomes and long-term success.",
 
-},
+  },
 
 ];
 
@@ -351,7 +427,7 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* ---------- Services we offer ---------- */}
-      <section className={`${styles.section} ${styles.tinted}`}>
+      {/* <section className={`${styles.section} ${styles.tinted}`}>
         <div className="container">
           <div className={styles.head}>
             <h2 className={styles.title}>Digital Transformation Services We Offer</h2>
@@ -361,7 +437,64 @@ export default function DigitalTransformationPage() {
           </div>
           <ServiceExplorer items={services} />
         </div>
+      </section> */}
+
+
+
+
+      {/* ---------- AI Automation Core Capabilities ---------- */}
+      <section className={styles.section} id="ai-capabilities">
+        <div className="container">
+          <div className={styles.head}>
+            <h2 className={styles.title}>
+              Intelligent Managed Services{" "}
+              <span className={styles.gradText}>
+                Capabilities for Every Business
+              </span>
+            </h2>
+            <p className={styles.body}>
+              Explore specialized capabilities that combine intelligent
+              automation, proactive IT management, and scalable enterprise
+              solutions to improve operational efficiency.
+            </p>
+          </div>
+
+          <ul className={styles.aicapGrid}>
+            {aicapabilities.map((c, i) => (
+              <li className={styles.aicapCard} key={c.title}>
+                <span className={styles.aicapNum}>{pad(i + 1)}</span>
+
+                <h3>{c.title}</h3>
+
+                <p className={styles.aicapDesc}>{c.desc}</p>
+
+                <ul className={styles.aicapPoints}>
+                  {c.points.map((p) => (
+                    <li key={p}>
+                      <span className={styles.aitick}>
+                        <CheckIcon />
+                      </span>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className={styles.aicapMetric}>
+                  {/* <strong>{c.metric.num}</strong> {c.metric.label} */}
+                  <a
+                    href={c.href}
+                    className="btn btn-primary"
+                    style={{ marginTop: "2rem" }}
+                  >
+                    Explore Our Services <ArrowIcon />
+                  </a>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
+
 
       {/* ---------- Technologies ---------- */}
       <section className={styles.section}>

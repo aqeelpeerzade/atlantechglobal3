@@ -9,6 +9,7 @@ export type TransformationService = {
   heading: string;
   body: string;
   pillars: string[];
+  href: string;
 };
 
 export default function ServiceExplorer({ items }: { items: TransformationService[] }) {
@@ -64,7 +65,8 @@ export default function ServiceExplorer({ items }: { items: TransformationServic
         </ul>
 
         <div className={styles.panelFoot}>
-          <Link href="/contact" className={styles.exploreLink}>
+
+          <Link href={current.href} className={styles.exploreLink}>
             Explore Service Capabilities →
           </Link>
           <span>Tier-1 SLA Guaranteed</span>

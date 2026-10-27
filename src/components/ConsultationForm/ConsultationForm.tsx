@@ -29,7 +29,11 @@ export default function ConsultationForm({ source, flat = false }: { source: str
   }
 
   return (
-    <form className={`${styles.form}${flat ? ` ${styles.flat}` : ""}`} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form}${flat ? ` ${styles.flat}` : ""}`}
+      onSubmit={handleSubmit}
+      method="POST"
+    >
       <input type="checkbox" name="botcheck" hidden tabIndex={-1} autoComplete="off" />
       <div className={styles.row}>
         <input type="text" name="first_name" placeholder="First name" aria-label="First name" autoComplete="given-name" required />

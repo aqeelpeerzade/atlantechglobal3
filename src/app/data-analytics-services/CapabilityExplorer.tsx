@@ -10,6 +10,7 @@ export type Capability = {
   tag?: string;
   desc: string;
   panel: { title: string; badge: string; layers: Layer[]; deliverables: string[]; cta: string };
+  href: string;
 };
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -39,6 +40,14 @@ export default function CapabilityExplorer({ items }: { items: Capability[] }) {
             <span className={styles.gradText}>{c.title[1]}</span>
           </span>
           <span className={styles.capDesc}>{c.desc}</span>
+
+
+          <a href={c.href} className={styles.previewCta}>
+            Explore Services
+            <svg className="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
         </button>
       ))}
 

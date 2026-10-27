@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 /** Where the "Product Engineering Services" breadcrumb links. Change if your parent page lives elsewhere. */
-const PARENT_HREF = "/product-engineering";
+const PARENT_HREF = "/product-engineering-services";
 /** Hero image in /public/images — change the file name if yours differs. */
 const HERO_IMAGE = "/images/mobile-web-saas.jpg";
 

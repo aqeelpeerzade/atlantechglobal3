@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { asset } from "@/lib/asset";
-import { CheckIcon } from "@/lib/icons";
+import { ArrowIcon, CheckIcon } from "@/lib/icons";
 import AnalyticsFaq, { type AnalyticsFaqItem } from "./AnalyticsFaq";
 import CapabilityExplorer, { type Capability } from "./CapabilityExplorer";
 import ClientStories, { type Story } from "./ClientStories";
@@ -14,6 +14,53 @@ export const metadata: Metadata = {
     "Unlock smarter decisions with data engineering, business intelligence, data governance and modern data stack services from Atlantech Global.",
   alternates: { canonical: "/data-analytics/" },
 };
+const aicapabilities = [
+  {
+    title: "Data Engineering",
+    desc: "Design scalable data pipelines, modern architectures, and automated workflows that collect, integrate, and prepare high-quality data from multiple sources. Our data engineering services ensure reliable, secure, and real-time data availability for analytics and AI initiatives.",
+    points: [
+      "Automated Schema Drift Guard",
+      "Sub-second Aggregation APIs",
+      "End-to-end Data Lineage",
+      "SOC2 Compliant Encryption",
+    ],
+    href: "data-engineering",
+  },
+  {
+    title: "Analytics & BI",
+    desc: "Turn complex datasets into interactive dashboards, reports, and predictive insights. Our business intelligence solutions empower decision-makers with real-time visibility, KPI tracking, self-service analytics, and data-driven strategies that accelerate business growth.",
+    points: [
+      "Executive KPI Dashboards",
+      "Self-Service Report Catalog",
+      "Automated Report Distribution",
+      "Row-Level Security",
+    ],
+    href: "analytics-bi",
+  },
+  {
+    title: "Data Governance",
+    desc: "Establish a trusted data ecosystem with standardized policies, metadata management, security controls, and compliance frameworks. We help improve data quality, consistency, accessibility, and regulatory compliance while enabling secure enterprise-wide data usage.",
+    points: [
+      "Business Glossary & Data Ownership",
+      "Data Quality Scorecards",
+      "GDPR & HIPAA Policy Controls",
+      "Access Audit Trails",
+    ],
+    href: "data-governance",
+  },
+  {
+    title: "Modern Data Stack",
+    desc: "Modernize your analytics platform with cloud-native data warehouses, lakehouses, ELT pipelines, orchestration, and scalable analytics tools. We build flexible, future-ready data ecosystems that support AI, advanced analytics, and enterprise-wide digital transformation.",
+    points: [
+      "Cloud Migration Roadmap",
+      "Infrastructure as Code",
+      "Reverse ETL to Business Apps",
+      "FinOps Cost Guardrails",
+    ],
+    href: "modern-data-stack",
+  },
+];
+
 
 const stats = [
   { num: "1.2 PB", label: "Pipelines Operated" },
@@ -29,69 +76,74 @@ const telemetry = [
   { title: "Insights & Decisions", detail: "Real-Time Executive Dashboards" },
 ];
 
-const capabilities: Capability[] = [
-  {
-    title: ["Data ", "Engineering"],
-    tag: "Core",
-    desc: "Design scalable data pipelines, modern architectures, and automated workflows that collect, integrate, and prepare high-quality data from multiple sources. Our data engineering services ensure reliable, secure, and real-time data availability for analytics and AI initiatives.",
-    panel: {
-      title: "Data Engineering Architecture",
-      badge: "Production Ready",
-      layers: [
-        { name: "Ingestion & Streaming", status: "LATENCY: <120ms", tools: ["Apache Kafka", "AWS Kinesis", "Airbyte / Fivetran"] },
-        { name: "Storage & Processing", status: "STATUS: AUTO-SCALING", tools: ["Snowflake", "Databricks", "dbt Core"] },
-        { name: "Consumption & Governance", status: "RBAC ACTIVE", accent: true, tools: ["Looker", "Power BI", "Monte Carlo"] },
-      ],
-      deliverables: ["Automated Schema Drift Guard", "Sub-second Aggregation APIs", "End-to-end Data Lineage", "SOC2 Compliant Encryption"],
-      cta: "Request Custom Pipeline Blueprint",
-    },
-  },
-  {
-    title: ["Analytics & ", "BI"],
-    desc: "Turn complex datasets into interactive dashboards, reports, and predictive insights. Our business intelligence solutions empower decision-makers with real-time visibility, KPI tracking, self-service analytics, and data-driven strategies that accelerate business growth.",
-    panel: {
-      title: "BI & Analytics Architecture",
-      badge: "Self-Service Ready",
-      layers: [
-        { name: "Semantic Modeling", status: "METRICS: CERTIFIED", tools: ["dbt Semantic Layer", "LookML", "Cube"] },
-        { name: "Visualization & Reporting", status: "REFRESH: NEAR REAL-TIME", tools: ["Power BI", "Tableau", "Looker"] },
-        { name: "Predictive Insights", status: "FORECAST ACCURACY: 94%", accent: true, tools: ["Python", "Azure ML", "Prophet"] },
-      ],
-      deliverables: ["Executive KPI Dashboards", "Self-Service Report Catalog", "Automated Report Distribution", "Row-Level Security"],
-      cta: "Request a BI Assessment",
-    },
-  },
-  {
-    title: ["Data ", "Governance"],
-    desc: "Establish a trusted data ecosystem with standardized policies, metadata management, security controls, and compliance frameworks. We help improve data quality, consistency, accessibility, and regulatory compliance while enabling secure enterprise-wide data usage.",
-    panel: {
-      title: "Data Governance Framework",
-      badge: "Audit Ready",
-      layers: [
-        { name: "Catalog & Metadata", status: "COVERAGE: 100% ASSETS", tools: ["Collibra", "Alation", "Unity Catalog"] },
-        { name: "Quality & Observability", status: "STATUS: MONITORED", tools: ["Great Expectations", "Monte Carlo", "Soda"] },
-        { name: "Security & Compliance", status: "POLICIES ENFORCED", accent: true, tools: ["Immuta", "Microsoft Purview", "AWS Lake Formation"] },
-      ],
-      deliverables: ["Business Glossary & Data Ownership", "Data Quality Scorecards", "GDPR & HIPAA Policy Controls", "Access Audit Trails"],
-      cta: "Request a Governance Review",
-    },
-  },
-  {
-    title: ["Modern ", "Data Stack"],
-    desc: "Modernize your analytics platform with cloud-native data warehouses, lakehouses, ELT pipelines, orchestration, and scalable analytics tools. We build flexible, future-ready data ecosystems that support AI, advanced analytics, and enterprise-wide digital transformation.",
-    panel: {
-      title: "Modern Data Stack Blueprint",
-      badge: "Cloud Native",
-      layers: [
-        { name: "Ingestion & ELT", status: "CONNECTORS: 300+", tools: ["Fivetran", "Airbyte", "Kafka Connect"] },
-        { name: "Lakehouse & Warehouse", status: "STATUS: AUTO-SCALING", tools: ["Snowflake", "Databricks", "BigQuery"] },
-        { name: "Orchestration & Activation", status: "PIPELINES VERSIONED", accent: true, tools: ["Airflow", "Dagster", "Hightouch"] },
-      ],
-      deliverables: ["Cloud Migration Roadmap", "Infrastructure as Code", "Reverse ETL to Business Apps", "FinOps Cost Guardrails"],
-      cta: "Request a Stack Blueprint",
-    },
-  },
-];
+// const capabilities: Capability[] = [
+//   {
+//     title: ["Data ", "Engineering"],
+//     tag: "Core",
+//     desc: "Design scalable data pipelines, modern architectures, and automated workflows that collect, integrate, and prepare high-quality data from multiple sources. Our data engineering services ensure reliable, secure, and real-time data availability for analytics and AI initiatives.",
+//     panel: {
+//       title: "Data Engineering Architecture",
+//       badge: "Production Ready",
+//       layers: [
+//         { name: "Ingestion & Streaming", status: "LATENCY: <120ms", tools: ["Apache Kafka", "AWS Kinesis", "Airbyte / Fivetran"] },
+//         { name: "Storage & Processing", status: "STATUS: AUTO-SCALING", tools: ["Snowflake", "Databricks", "dbt Core"] },
+//         { name: "Consumption & Governance", status: "RBAC ACTIVE", accent: true, tools: ["Looker", "Power BI", "Monte Carlo"] },
+//       ],
+//       deliverables: ["Automated Schema Drift Guard", "Sub-second Aggregation APIs", "End-to-end Data Lineage", "SOC2 Compliant Encryption"],
+//       cta: "Request Custom Pipeline Blueprint",
+
+//     },
+//     href: "data-engineering"
+//   },
+//   {
+//     title: ["Analytics & ", "BI"],
+//     desc: "Turn complex datasets into interactive dashboards, reports, and predictive insights. Our business intelligence solutions empower decision-makers with real-time visibility, KPI tracking, self-service analytics, and data-driven strategies that accelerate business growth.",
+//     panel: {
+//       title: "BI & Analytics Architecture",
+//       badge: "Self-Service Ready",
+//       layers: [
+//         { name: "Semantic Modeling", status: "METRICS: CERTIFIED", tools: ["dbt Semantic Layer", "LookML", "Cube"] },
+//         { name: "Visualization & Reporting", status: "REFRESH: NEAR REAL-TIME", tools: ["Power BI", "Tableau", "Looker"] },
+//         { name: "Predictive Insights", status: "FORECAST ACCURACY: 94%", accent: true, tools: ["Python", "Azure ML", "Prophet"] },
+//       ],
+//       deliverables: ["Executive KPI Dashboards", "Self-Service Report Catalog", "Automated Report Distribution", "Row-Level Security"],
+//       cta: "Request a BI Assessment",
+//     },
+//     href: "analytics-bi"
+//   },
+//   {
+//     title: ["Data ", "Governance"],
+//     desc: "Establish a trusted data ecosystem with standardized policies, metadata management, security controls, and compliance frameworks. We help improve data quality, consistency, accessibility, and regulatory compliance while enabling secure enterprise-wide data usage.",
+//     panel: {
+//       title: "Data Governance Framework",
+//       badge: "Audit Ready",
+//       layers: [
+//         { name: "Catalog & Metadata", status: "COVERAGE: 100% ASSETS", tools: ["Collibra", "Alation", "Unity Catalog"] },
+//         { name: "Quality & Observability", status: "STATUS: MONITORED", tools: ["Great Expectations", "Monte Carlo", "Soda"] },
+//         { name: "Security & Compliance", status: "POLICIES ENFORCED", accent: true, tools: ["Immuta", "Microsoft Purview", "AWS Lake Formation"] },
+//       ],
+//       deliverables: ["Business Glossary & Data Ownership", "Data Quality Scorecards", "GDPR & HIPAA Policy Controls", "Access Audit Trails"],
+//       cta: "Request a Governance Review",
+//     },
+//     href: "data-governance"
+//   },
+//   {
+//     title: ["Modern ", "Data Stack"],
+//     desc: "Modernize your analytics platform with cloud-native data warehouses, lakehouses, ELT pipelines, orchestration, and scalable analytics tools. We build flexible, future-ready data ecosystems that support AI, advanced analytics, and enterprise-wide digital transformation.",
+//     panel: {
+//       title: "Modern Data Stack Blueprint",
+//       badge: "Cloud Native",
+//       layers: [
+//         { name: "Ingestion & ELT", status: "CONNECTORS: 300+", tools: ["Fivetran", "Airbyte", "Kafka Connect"] },
+//         { name: "Lakehouse & Warehouse", status: "STATUS: AUTO-SCALING", tools: ["Snowflake", "Databricks", "BigQuery"] },
+//         { name: "Orchestration & Activation", status: "PIPELINES VERSIONED", accent: true, tools: ["Airflow", "Dagster", "Hightouch"] },
+//       ],
+//       deliverables: ["Cloud Migration Roadmap", "Infrastructure as Code", "Reverse ETL to Business Apps", "FinOps Cost Guardrails"],
+//       cta: "Request a Stack Blueprint",
+//     },
+//     href: "modern-data-stack"
+//   },
+// ];
 
 const partnerPoints = [
   {
@@ -158,72 +210,72 @@ const industries = [
 ];
 
 const faqs: AnalyticsFaqItem[] = [
- 
+
 
   {
-  q: "What are Data Analytics Services?",
+    q: "What are Data Analytics Services?",
 
-  a: [
-    "Data Analytics Services help businesses collect, organize, analyze, and visualize data to uncover actionable insights. These services include data engineering, business intelligence, predictive analytics, data governance, and AI-powered analytics, enabling organizations to improve decision-making, optimize operations, reduce costs, and accelerate business growth.",
-  ],
-},
-
-{
-  q: "How can Data Analytics Services benefit my business?",
-
-  a: [
-    "Data Analytics Services enable businesses to make faster, data-driven decisions by transforming raw data into meaningful insights. They help identify trends, forecast demand, improve customer experiences, optimize operations, manage risks, and increase profitability. Organizations across industries use analytics to gain a competitive advantage and support long-term digital transformation.",
-  ],
-},
-{
-  q: "Your question here?",
-  a: [],
-  list: {
-    intro: "Lead-in line:",
-    items: ["Point one", "Point two", "Point three"],
-  },
-  outro: "Closing line after the bullets.",
-},
-
-{
-  q: "What is the difference between Data Analytics, Data Science, and Business Intelligence?",
-
-  a: [],
-
-  list: {
-    intro: "Data Analytics, Data Science, and Business Intelligence (BI) each serve different business purposes.",
-
-    items: [
-      "Data Analytics examines historical and real-time data to identify trends, measure performance, and support business decisions.",
-      "Data Science uses machine learning, AI, and statistical modeling to predict future outcomes and solve complex business problems.",
-      "Business Intelligence (BI) transforms business data into interactive dashboards, reports, and visualizations for operational monitoring.",
+    a: [
+      "Data Analytics Services help businesses collect, organize, analyze, and visualize data to uncover actionable insights. These services include data engineering, business intelligence, predictive analytics, data governance, and AI-powered analytics, enabling organizations to improve decision-making, optimize operations, reduce costs, and accelerate business growth.",
     ],
   },
-},
 
-{
-  q: "What technologies are used in modern Data Analytics Solutions?",
+  {
+    q: "How can Data Analytics Services benefit my business?",
 
-  a: [
-    "Modern Data Analytics Solutions combine cloud platforms, AI, machine learning, data engineering, data warehouses, data lakes, business intelligence tools, and real-time analytics. Technologies such as Microsoft Power BI, Tableau, Azure, AWS, Snowflake, Databricks, Python, SQL, and Apache Spark help organizations process large volumes of data efficiently and generate valuable business insights.",
-  ],
-},
+    a: [
+      "Data Analytics Services enable businesses to make faster, data-driven decisions by transforming raw data into meaningful insights. They help identify trends, forecast demand, improve customer experiences, optimize operations, manage risks, and increase profitability. Organizations across industries use analytics to gain a competitive advantage and support long-term digital transformation.",
+    ],
+  },
+  {
+    q: "Your question here?",
+    a: [],
+    list: {
+      intro: "Lead-in line:",
+      items: ["Point one", "Point two", "Point three"],
+    },
+    outro: "Closing line after the bullets.",
+  },
 
-{
-  q: "What are the key components of a modern Data Analytics solution?",
+  {
+    q: "What is the difference between Data Analytics, Data Science, and Business Intelligence?",
 
-  a: [
-    "A modern Data Analytics solution includes data integration, data engineering, cloud storage, data governance, business intelligence (BI), data visualization, predictive analytics, and AI-driven insights. These components work together to collect, organize, analyze, and transform data into actionable intelligence, enabling businesses to make faster decisions, improve operational efficiency, and drive sustainable growth.",
-  ],
-},
+    a: [],
 
-{
-  q: "How do AI and Machine Learning improve Data Analytics?",
+    list: {
+      intro: "Data Analytics, Data Science, and Business Intelligence (BI) each serve different business purposes.",
 
-  a: [
-    "AI and Machine Learning enhance Data Analytics by automatically identifying patterns, predicting future trends, detecting anomalies, and generating actionable insights from large datasets. They reduce manual analysis, improve forecasting accuracy, automate decision-making, and help businesses uncover opportunities, optimize operations, personalize customer experiences, and respond quickly to changing market conditions.",
-  ],
-},
+      items: [
+        "Data Analytics examines historical and real-time data to identify trends, measure performance, and support business decisions.",
+        "Data Science uses machine learning, AI, and statistical modeling to predict future outcomes and solve complex business problems.",
+        "Business Intelligence (BI) transforms business data into interactive dashboards, reports, and visualizations for operational monitoring.",
+      ],
+    },
+  },
+
+  {
+    q: "What technologies are used in modern Data Analytics Solutions?",
+
+    a: [
+      "Modern Data Analytics Solutions combine cloud platforms, AI, machine learning, data engineering, data warehouses, data lakes, business intelligence tools, and real-time analytics. Technologies such as Microsoft Power BI, Tableau, Azure, AWS, Snowflake, Databricks, Python, SQL, and Apache Spark help organizations process large volumes of data efficiently and generate valuable business insights.",
+    ],
+  },
+
+  {
+    q: "What are the key components of a modern Data Analytics solution?",
+
+    a: [
+      "A modern Data Analytics solution includes data integration, data engineering, cloud storage, data governance, business intelligence (BI), data visualization, predictive analytics, and AI-driven insights. These components work together to collect, organize, analyze, and transform data into actionable intelligence, enabling businesses to make faster decisions, improve operational efficiency, and drive sustainable growth.",
+    ],
+  },
+
+  {
+    q: "How do AI and Machine Learning improve Data Analytics?",
+
+    a: [
+      "AI and Machine Learning enhance Data Analytics by automatically identifying patterns, predicting future trends, detecting anomalies, and generating actionable insights from large datasets. They reduce manual analysis, improve forecasting accuracy, automate decision-making, and help businesses uncover opportunities, optimize operations, personalize customer experiences, and respond quickly to changing market conditions.",
+    ],
+  },
 
 ];
 
@@ -347,7 +399,7 @@ export default function DataAnalyticsPage() {
       </section>
 
       {/* ---------- Capabilities ---------- */}
-      <section className={`${styles.section} ${styles.tinted} ${styles.ruled}`} id="capabilities">
+      {/* <section className={`${styles.section} ${styles.tinted} ${styles.ruled}`} id="capabilities">
         <div className="container">
           <div className={styles.head}>
             <h2 className={styles.title}>
@@ -360,7 +412,67 @@ export default function DataAnalyticsPage() {
           </div>
           <CapabilityExplorer items={capabilities} />
         </div>
+      </section> */}
+
+
+
+
+
+
+      {/* ---------- AI Automation Core Capabilities ---------- */}
+      <section className={styles.section} id="ai-capabilities">
+        <div className="container">
+          <div className={styles.head}>
+            <h2 className={styles.title}>
+              Intelligent Managed Services{" "}
+              <span className={styles.gradText}>
+                Capabilities for Every Business
+              </span>
+            </h2>
+            <p className={styles.body}>
+              Explore specialized capabilities that combine intelligent
+              automation, proactive IT management, and scalable enterprise
+              solutions to improve operational efficiency.
+            </p>
+          </div>
+
+          <ul className={styles.aicapGrid}>
+            {aicapabilities.map((c, i) => (
+              <li className={styles.aicapCard} key={c.title}>
+                <span className={styles.aicapNum}>{pad(i + 1)}</span>
+
+                <h3>{c.title}</h3>
+
+                <p className={styles.aicapDesc}>{c.desc}</p>
+
+                <ul className={styles.aicapPoints}>
+                  {c.points.map((p) => (
+                    <li key={p}>
+                      <span className={styles.aitick}>
+                        <CheckIcon />
+                      </span>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className={styles.aicapMetric}>
+                  {/* <strong>{c.metric.num}</strong> {c.metric.label} */}
+                  <a
+                    href={c.href}
+                    className="btn btn-primary"
+                    style={{ marginTop: "2rem" }}
+                  >
+                    Explore Our Services <ArrowIcon />
+                  </a>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
+
+
 
       {/* ---------- Dark CTA ---------- */}
       <section className={styles.darkCta}>

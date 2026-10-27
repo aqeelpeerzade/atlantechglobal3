@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { asset } from "@/lib/asset";
-import { CheckIcon } from "@/lib/icons";
+import { ArrowIcon, CheckIcon } from "@/lib/icons";
 import ContactPanel from "./ContactPanel";
 import ProductFaq, { type ProductFaqItem } from "./ProductFaq";
 import styles from "./page.module.css";
@@ -27,31 +27,83 @@ const benefits = [
   "Manage the complete product lifecycle—from strategy and UX design to development, deployment, maintenance, and continuous optimization.",
 ];
 
-const services = [
+const aicapabilities = [
   {
     title: "Product Strategy & Consulting",
     desc: "Define a clear product vision, validate ideas, and create a strategic roadmap that aligns technology investments with your business goals.",
-     href: "mobile-web-saas-ecommerce"
+    points: [
+      "Product vision & strategy",
+      "Idea validation & feasibility",
+      "Strategic product roadmap",
+    ],
+    href: "product-strategy-consulting",
   },
   {
     title: "UI/UX Design & Prototyping",
     desc: "Create intuitive user experiences with Product Design and Development that transform ideas into interactive prototypes, validate concepts, and deliver engaging, user-centric digital products.",
-    href: "ai-strategy-enginnering"
+    points: [
+      "User interface & experience design",
+      "Interactive prototypes",
+      "User-centric product validation",
+    ],
+    href: "ui-ux-prototyping",
   },
   {
     title: "API & Microservices",
     desc: "Develop secure APIs and scalable microservices architectures that enable seamless system integration, improve application performance, and support flexible, cloud-native product ecosystems.",
-    href: "ai-strategy-enginnering"
+    points: [
+      "Secure API development",
+      "Scalable microservices architecture",
+      "System integration & performance",
+    ],
+    href: "api-microservices",
   },
   {
     title: "Testing & QA Automation",
     desc: "Ensure reliable, high-quality software through automated testing, performance validation, security assessments, and continuous QA processes that accelerate releases and reduce defects.",
-     href: "ai-strategy-enginnering"
+    points: [
+      "Automated software testing",
+      "Performance & security validation",
+      "Continuous quality assurance",
+    ],
+    href: "testing-qa-automation",
   },
   {
     title: "Mobile, Web & SaaS",
     desc: "Build scalable Mobile App Development and Web Application Development solutions, along with secure SaaS platforms, that deliver seamless user experiences across devices and support business growth.",
-     href: "mobile-web-saas-ecommerce"
+    points: [
+      "Mobile app development",
+      "Web application development",
+      "Secure & scalable SaaS platforms",
+    ],
+    href: "mobile-web-saas-ecommerce",
+  },
+];
+const services = [
+  {
+    title: "Product Strategy & Consulting",
+    desc: "Define a clear product vision, validate ideas, and create a strategic roadmap that aligns technology investments with your business goals.",
+    href: "product-strategy-consulting"
+  },
+  {
+    title: "UI/UX Design & Prototyping",
+    desc: "Create intuitive user experiences with Product Design and Development that transform ideas into interactive prototypes, validate concepts, and deliver engaging, user-centric digital products.",
+    href: "ui-ux-prototyping"
+  },
+  {
+    title: "API & Microservices",
+    desc: "Develop secure APIs and scalable microservices architectures that enable seamless system integration, improve application performance, and support flexible, cloud-native product ecosystems.",
+    href: "api-microservices"
+  },
+  {
+    title: "Testing & QA Automation",
+    desc: "Ensure reliable, high-quality software through automated testing, performance validation, security assessments, and continuous QA processes that accelerate releases and reduce defects.",
+    href: "testing-qa-automation"
+  },
+  {
+    title: "Mobile, Web & SaaS",
+    desc: "Build scalable Mobile App Development and Web Application Development solutions, along with secure SaaS platforms, that deliver seamless user experiences across devices and support business growth.",
+    href: "mobile-web-saas-ecommerce"
   },
 ];
 
@@ -133,70 +185,70 @@ const lifecycle = [
 ];
 
 const faqs: ProductFaqItem[] = [
- {
-  q: "What are Product Engineering Services, and how do they benefit businesses?",
+  {
+    q: "What are Product Engineering Services, and how do they benefit businesses?",
 
-  a: [
-    "Product Engineering Services streamline the entire product lifecycle, enabling faster launches, better quality, reduced costs, and scalable solutions.",
-  ],
-},
-
-{
-  q: "How do I choose the right Product Engineering Company?",
-
-  a: [
-    "Choose a Product Engineering Company offering end-to-end expertise, agile development, cloud, AI, quality assurance, and continuous product support.",
-  ],
-},
-
-{
-  q: "What is the difference between Software Product Engineering and Software Development?",
-
-  a: [
-    "Software development builds applications, while Product Engineering manages the complete lifecycle - from strategy and design to development, testing, deployment, and continuous improvement.",
-  ],
-},
-
-{
-  q: "What technologies are used in modern Product Engineering?",
-
-  a: [],
-
-  list: {
-    intro: "Modern Product Engineering Services leverage technologies such as:",
-
-    items: [
-      "Artificial Intelligence (AI) & Machine Learning",
-      "Cloud Computing",
-      "DevOps & CI/CD",
-      "Microservices Architecture",
-      "API Development",
-      "Containerization (Docker & Kubernetes)",
-      "Automation Testing",
-      "Data Analytics",
-      "IoT Integration",
+    a: [
+      "Product Engineering Services streamline the entire product lifecycle, enabling faster launches, better quality, reduced costs, and scalable solutions.",
     ],
   },
 
-  outro: "These technologies accelerate development, improve scalability, strengthen security, and enable continuous innovation.",
-},
+  {
+    q: "How do I choose the right Product Engineering Company?",
 
-{
-  q: "Can Product Engineering help modernize existing software products?",
+    a: [
+      "Choose a Product Engineering Company offering end-to-end expertise, agile development, cloud, AI, quality assurance, and continuous product support.",
+    ],
+  },
 
-  a: [
-    "Product Engineering Services modernize legacy applications through cloud migration, improved security, AI, automation, modern APIs, and enhanced performance while reducing technical debt.",
-  ],
-},
+  {
+    q: "What is the difference between Software Product Engineering and Software Development?",
 
-{
-  q: "Why should businesses invest in Product Design and Development?",
+    a: [
+      "Software development builds applications, while Product Engineering manages the complete lifecycle - from strategy and design to development, testing, deployment, and continuous improvement.",
+    ],
+  },
 
-  a: [
-    "Product Design and Development creates customer-focused solutions, improves user experience, accelerates innovation, reduces risks, speeds time-to-market, and supports long-term growth.",
-  ],
-},
-  
+  {
+    q: "What technologies are used in modern Product Engineering?",
+
+    a: [],
+
+    list: {
+      intro: "Modern Product Engineering Services leverage technologies such as:",
+
+      items: [
+        "Artificial Intelligence (AI) & Machine Learning",
+        "Cloud Computing",
+        "DevOps & CI/CD",
+        "Microservices Architecture",
+        "API Development",
+        "Containerization (Docker & Kubernetes)",
+        "Automation Testing",
+        "Data Analytics",
+        "IoT Integration",
+      ],
+    },
+
+    outro: "These technologies accelerate development, improve scalability, strengthen security, and enable continuous innovation.",
+  },
+
+  {
+    q: "Can Product Engineering help modernize existing software products?",
+
+    a: [
+      "Product Engineering Services modernize legacy applications through cloud migration, improved security, AI, automation, modern APIs, and enhanced performance while reducing technical debt.",
+    ],
+  },
+
+  {
+    q: "Why should businesses invest in Product Design and Development?",
+
+    a: [
+      "Product Design and Development creates customer-focused solutions, improves user experience, accelerates innovation, reduces risks, speeds time-to-market, and supports long-term growth.",
+    ],
+  },
+
 ];
 
 const assurances = [
@@ -373,7 +425,7 @@ export default function ProductEngineeringPage() {
       </section>
 
       {/* ---------- End-to-end services ---------- */}
-      <section className={styles.section} id="services">
+      {/* <section className={styles.section} id="services">
         <div className="container">
           <div className={`${styles.head} ${styles.headNarrow}`}>
             <h2 className={styles.title}>
@@ -391,8 +443,8 @@ export default function ProductEngineeringPage() {
                     <h3>{s.title}</h3>
                     <p>{s.desc}</p>
                   </div>
-                <a href={s.href} className={styles.svcChevron} aria-label={`Explore ${s.title}`}><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
-                  
+                  <a href={s.href} className={styles.svcChevron} aria-label={`Explore ${s.title}`}><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
+
                 </li>
               ))}
             </ol>
@@ -424,6 +476,60 @@ export default function ProductEngineeringPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section> */}
+
+
+      {/* ---------- AI Automation Core Capabilities ---------- */}
+      <section className={styles.section} id="ai-capabilities">
+        <div className="container">
+          <div className={styles.head}>
+            <h2 className={styles.title}>
+              Intelligent Managed Services{" "}
+              <span className={styles.gradText}>
+                Capabilities for Every Business
+              </span>
+            </h2>
+            <p className={styles.body}>
+              Explore specialized capabilities that combine intelligent
+              automation, proactive IT management, and scalable enterprise
+              solutions to improve operational efficiency.
+            </p>
+          </div>
+
+          <ul className={styles.aicapGrid}>
+            {aicapabilities.map((c, i) => (
+              <li className={styles.aicapCard} key={c.title}>
+                <span className={styles.aicapNum}>{pad(i + 1)}</span>
+
+                <h3>{c.title}</h3>
+
+                <p className={styles.aicapDesc}>{c.desc}</p>
+
+                <ul className={styles.aicapPoints}>
+                  {c.points.map((p) => (
+                    <li key={p}>
+                      <span className={styles.aitick}>
+                        <CheckIcon />
+                      </span>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className={styles.aicapMetric}>
+                  {/* <strong>{c.metric.num}</strong> {c.metric.label} */}
+                  <a
+                    href={c.href}
+                    className="btn btn-primary"
+                    style={{ marginTop: "2rem" }}
+                  >
+                    Explore Our Services <ArrowIcon />
+                  </a>
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -513,7 +619,7 @@ export default function ProductEngineeringPage() {
       </section>
 
       {/* ---------- CTA banner ---------- */}
-      <section className={styles.bannerWrap}>
+      {/* <section className={styles.bannerWrap}>
         <div className="container">
           <div className={styles.banner}>
             <h2>Want to Future-Proof Your Product Engineering Transformation?</h2>
@@ -528,7 +634,7 @@ export default function ProductEngineeringPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ---------- Contact ---------- */}
       <section className={`${styles.section} ${styles.tinted}`} id="contact">

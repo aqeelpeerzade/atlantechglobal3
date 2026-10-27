@@ -1,0 +1,830 @@
+/* ==========================================================================
+   Consulting & Strategy — measured against the Figma frame
+   Panel 1280px · content 1176px · section padding 96px
+   White and #faf8ff bands alternate; hero has soft violet glows
+   ========================================================================== */
+.page {
+    --pe-pale: #faf8ff;
+    --pe-card: #f2f3ff;
+    --pe-tile: #ebedfc;
+    --pe-violet: #630ed4;
+    --pe-accent: #7d3bed;
+    --pe-ink: #171b26;
+    --pe-text: #4a4455;
+    --pe-pad: 52px;
+    --pe-mono: "Courier New", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --pe-shadow: 0 1px 2px rgba(23, 27, 38, 0.04), 0 6px 18px -8px rgba(99, 14, 212, 0.1);
+    background: #fff;
+}
+
+.page svg {
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.panel {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 96px var(--pe-pad);
+}
+
+.sectionFaq {
+    padding-bottom: 80px;
+}
+
+.band {
+    background: var(--pe-pale);
+}
+
+.gradText {
+    background: linear-gradient(90deg, #630ed4 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ---------- Section heading ---------- */
+.head {
+    margin-bottom: 40px;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 16px;
+    color: var(--pe-violet);
+}
+
+.title {
+    max-width: 640px;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 42px;
+    letter-spacing: -0.03em;
+    color: var(--pe-ink);
+}
+
+.lead {
+    max-width: 640px;
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--pe-text);
+}
+
+.subHead {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--pe-ink);
+}
+
+.tile36 {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--pe-tile);
+    color: var(--pe-violet);
+}
+
+.tile36 svg {
+    width: 18px;
+    height: 18px;
+}
+
+.solidBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 10px;
+    background: var(--pe-accent);
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 12px 24px -10px rgba(125, 59, 237, 0.6);
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.solidBtn:hover {
+    filter: brightness(1.07);
+    transform: translateY(-1px);
+}
+
+.solidBtn svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 2;
+}
+
+/* ---------- Hero ---------- */
+.heroWrap {
+    background:
+        radial-gradient(520px 420px at 0% 18%, rgba(236, 226, 253, 0.9), transparent 70%),
+        radial-gradient(560px 460px at 92% 88%, rgba(226, 219, 253, 0.8), transparent 70%),
+        #f8f7ff;
+}
+
+.crumbBar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-height: 43px;
+    padding: 0 var(--pe-pad);
+    background: rgba(246, 247, 255, 0.9);
+    font-size: 13px;
+    color: var(--pe-text);
+}
+
+.crumbBar a:hover {
+    color: var(--pe-violet);
+}
+
+.crumbBar span[aria-hidden] {
+    color: #9a96a8;
+}
+
+.crumbCurrent {
+    font-weight: 600;
+    color: var(--pe-violet);
+}
+
+.hero {
+    padding: 56px var(--pe-pad) 80px;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 48px;
+}
+
+.eyebrowPill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: var(--pe-tile);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--pe-violet);
+}
+
+.heroTitle {
+    margin: 16px 0 16px;
+    max-width: 520px;
+    font-size: clamp(40px, 3.97vw, 60px);
+    font-weight: 800;
+    line-height: 1.07;
+    letter-spacing: -0.035em;
+    color: var(--pe-ink);
+}
+
+.heroCopy {
+    max-width: 520px;
+    margin-bottom: 28px;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--pe-text);
+}
+
+.heroArtCard {
+    padding: 8px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 28px 56px -20px rgba(125, 59, 237, 0.3), 0 2px 8px rgba(23, 27, 38, 0.05);
+}
+
+.heroImg {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 446 / 300;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #ece9f8;
+}
+
+.achieveHead {
+    margin: 64px 0 20px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--pe-ink);
+}
+
+.achieveGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.achieveGrid li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 80px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--pe-ink);
+}
+
+.tickIcon {
+    display: flex;
+    flex-shrink: 0;
+    color: var(--pe-violet);
+}
+
+.tickIcon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ---------- Strategy ---------- */
+.stateStrip {
+    display: flex;
+    align-items: center;
+    padding: 28px 32px;
+    margin-bottom: 56px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #f1f0fb 0%, #ecebfa 100%);
+}
+
+.stateStrip li {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 16px;
+}
+
+.stateStrip li:first-child {
+    flex: 0 1 auto;
+}
+
+.stateArrow {
+    display: flex;
+    color: var(--pe-violet);
+}
+
+.stateArrow svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+.stateBody {
+    display: grid;
+    gap: 4px;
+}
+
+.stateBody small {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--pe-violet);
+}
+
+.stateBody b {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--pe-ink);
+}
+
+.stateStrip li:first-child {
+    flex: 1;
+}
+
+.approachGrid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.approachGrid li {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--pe-card);
+    box-shadow: var(--pe-shadow);
+}
+
+.approachLast {
+    background: #e4d9fb !important;
+}
+
+.approachTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.approachNum {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    color: var(--pe-violet);
+}
+
+.approachIcon {
+    display: flex;
+    color: #8a86a0;
+}
+
+.approachIcon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.approachLast .approachIcon {
+    color: var(--pe-violet);
+}
+
+.approachGrid h4 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--pe-ink);
+}
+
+.approachGrid p {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--pe-text);
+}
+
+.approachLast p {
+    color: var(--pe-violet);
+}
+
+/* ---------- Challenge mapping ---------- */
+.mapHeader {
+    display: none;
+}
+
+.mapList {
+    display: grid;
+    gap: 14px;
+}
+
+.mapList li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 96px minmax(0, 1fr);
+    align-items: center;
+}
+
+.mapFrom,
+.mapTo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 48px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.mapFrom {
+    background: #eeeefa;
+    color: var(--pe-ink);
+}
+
+.mapTo {
+    background: #e4d9fb;
+    color: var(--pe-violet);
+}
+
+.mapFrom svg,
+.mapTo svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.mapFrom svg {
+    color: #8a86a0;
+}
+
+.mapArrow {
+    display: flex;
+    justify-content: center;
+    color: var(--pe-violet);
+}
+
+.mapArrow svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+/* ---------- Focus areas ---------- */
+.focusGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.focusGrid li {
+    display: flex;
+    flex-direction: column;
+    min-height: 170px;
+    padding: 24px;
+    border-radius: 12px;
+    background: var(--pe-card);
+}
+
+.focusGrid h4 {
+    margin-top: auto;
+    padding-top: 28px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: var(--pe-ink);
+}
+
+.focusGrid p {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--pe-text);
+}
+
+/* ---------- Roadmap ---------- */
+.roadGrid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.roadGrid li {
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+}
+
+.roadNum {
+    align-self: flex-start;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--pe-tile);
+    font-family: var(--pe-mono);
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--pe-violet);
+}
+
+.roadGrid b {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--pe-ink);
+}
+
+.roadIcon {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 14px;
+    color: var(--pe-violet);
+}
+
+.roadIcon svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2;
+}
+
+.roadLast {
+    background: var(--pe-violet) !important;
+}
+
+.roadLast .roadNum {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.roadLast b,
+.roadLast .roadIcon {
+    color: #fff;
+}
+
+.noteBar {
+    max-width: 540px;
+    margin-top: 40px;
+    padding: 20px 24px;
+    border-radius: 10px;
+    background: var(--pe-tile);
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--pe-ink);
+}
+
+/* ---------- Why partner ---------- */
+.whyGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.whyGrid li {
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    padding: 28px;
+    border-radius: 12px;
+    background: var(--pe-card);
+}
+
+.whyGrid h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--pe-ink);
+}
+
+.whyGrid p {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--pe-text);
+}
+
+/* ---------- FAQ ---------- */
+.faqGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: 56px;
+}
+
+.faqTitle {
+    max-width: 360px;
+}
+
+.desk {
+    max-width: 420px;
+    margin-top: 32px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: var(--pe-tile);
+}
+
+.desk h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--pe-violet);
+}
+
+.desk h3 svg {
+    width: 16px;
+    height: 16px;
+}
+
+.desk p {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--pe-text);
+}
+
+.faqList {
+    display: grid;
+    gap: 16px;
+}
+
+.faqItem {
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: var(--pe-shadow);
+    border: 1px solid #ece9f8;
+}
+
+.faqItem h3 {
+    margin: 0;
+    font-size: inherit;
+}
+
+.faqQ {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 20px 24px;
+    border: 0;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.faqText {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--pe-ink);
+    pointer-events: none;
+}
+
+.faqChevron {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--pe-violet);
+    stroke-width: 2.2;
+    transform: rotate(-90deg);
+    transition: transform 0.25s ease;
+    pointer-events: none;
+}
+
+.faqOpen .faqChevron {
+    transform: rotate(0deg);
+}
+
+.faqA {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.faqOpen .faqA {
+    grid-template-rows: 1fr;
+}
+
+.faqA>div {
+    min-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: visibility 0.3s ease;
+}
+
+.faqOpen .faqA>div {
+    visibility: visible;
+}
+
+.faqA p {
+    padding: 2px 24px 22px;
+    font-size: 13px;
+    line-height: 22px;
+    color: var(--pe-text);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1180px) {
+    .page {
+        --pe-pad: 32px;
+    }
+
+    .approachGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .roadGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1023px) {
+
+    .heroGrid,
+    .faqGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .heroArtCard {
+        max-width: 520px;
+    }
+
+    .achieveGrid,
+    .focusGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stateStrip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .stateStrip li {
+        flex: none;
+    }
+
+    .stateArrow {
+        transform: rotate(90deg);
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 38px;
+    }
+}
+
+@media (max-width: 760px) {
+    .mapList li {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 6px;
+    }
+
+    .mapArrow {
+        transform: rotate(90deg);
+        justify-content: flex-start;
+        padding-left: 16px;
+    }
+
+    .whyGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .approachGrid,
+    .roadGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .page {
+        --pe-pad: 16px;
+    }
+
+    .section {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .hero {
+        padding: 40px var(--pe-pad) 56px;
+    }
+
+    .head {
+        margin-bottom: 28px;
+    }
+
+    .title {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .achieveHead {
+        margin-top: 40px;
+    }
+
+    .achieveGrid,
+    .focusGrid,
+    .approachGrid,
+    .roadGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .faqQ {
+        padding: 18px;
+    }
+
+    .faqA p {
+        padding: 2px 18px 20px;
+    }
+
+    .solidBtn {
+        width: 100%;
+    }
+}
