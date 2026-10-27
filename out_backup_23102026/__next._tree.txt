@@ -1,0 +1,13 @@
+:HL["/agbeta3/_next/static/chunks/0e1n9lxl4ngnn.css","style"]
+:HL["/agbeta3/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/agbeta3/_next/static/chunks/0_ziwavyriuh_.css","style"]
+:HL["/agbeta3/images/attm.webp","image"]
+:HL["/agbeta3/images/tech-ecosystem-icons.svg","image"]
+:HL["/agbeta3/images/inovation.svg","image"]
+:HL["/agbeta3/images/enterprice.svg","image"]
+:HL["/agbeta3/images/AI-native.svg","image"]
+:HL["/agbeta3/images/global-delivery.svg","image"]
+:HL["/agbeta3/images/certified.svg","image"]
+:HL["/agbeta3/images/247.svg","image"]
+:HL["/agbeta3/images/starr.svg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"(home)","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"0FvvpVsfB8F46I9mXrFVz"}
