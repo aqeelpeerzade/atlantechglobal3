@@ -31,7 +31,7 @@ export default function LazyVideo({
       ([entry]) => {
         if (!entry.isIntersecting) return;
         video.src = src;
-        video.play().catch(() => {});
+        video.play().catch(() => { });
         observer.disconnect();
       },
       { rootMargin: "200px" },

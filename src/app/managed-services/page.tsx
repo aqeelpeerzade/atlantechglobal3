@@ -29,6 +29,39 @@ const capabilities = [
   { icon: "/images/ioi.svg", title: "Intelligent Operations & Insights" },
 ];
 
+
+const aicapabilities = [
+  {
+    title: "Application Maintenance",
+    desc: "Keep your applications reliable, secure, and up to date with continuous monitoring, bug fixes, performance optimisation, and ongoing technical support.",
+    points: [
+      "Bug fixes & application updates",
+      "Performance monitoring & optimisation",
+      "Security patches & technical support",
+    ],
+    href: "application-maintenance",
+  },
+  {
+    title: "IT Operations Support",
+    desc: "Ensure smooth day-to-day IT operations with proactive infrastructure monitoring, incident management, troubleshooting, and dependable technical support.",
+    points: [
+      "Infrastructure monitoring & management",
+      "Incident response & troubleshooting",
+      "System reliability & IT support",
+    ],
+    href: "it-operations-support",
+  },
+  {
+    title: "Offshore Development Teams",
+    desc: "Extend your engineering capabilities with dedicated offshore developers who work alongside your team to build, maintain, and scale digital solutions.",
+    points: [
+      "Dedicated developers & engineers",
+      "Flexible team scaling",
+      "Collaborative development & delivery",
+    ],
+    href: "offshore-development-teams",
+  },
+];
 // `pos` places each card and its icon around the hub diagram on desktop (see .l1 … .r3 in the CSS).
 const hubServices = [
   {
@@ -187,29 +220,29 @@ const challenges = [
 ];
 
 const faqs: ServiceFaqItem[] = [
- {
-  q: "What are Managed IT Services?",
+  {
+    q: "What are Managed IT Services?",
 
-  a: "Managed IT Services outsource IT monitoring, management, maintenance, and support to improve performance, security, uptime, and cost efficiency.",
-},
+    a: "Managed IT Services outsource IT monitoring, management, maintenance, and support to improve performance, security, uptime, and cost efficiency.",
+  },
 
-{
-  q: "How do Managed IT Services improve business security?",
+  {
+    q: "How do Managed IT Services improve business security?",
 
-  a: "Managed IT Services improve security through continuous infrastructure monitoring, threat detection, vulnerability management, patch updates, identity and access management, data backup, disaster recovery planning, and compliance support.",
-},
+    a: "Managed IT Services improve security through continuous infrastructure monitoring, threat detection, vulnerability management, patch updates, identity and access management, data backup, disaster recovery planning, and compliance support.",
+  },
 
-{
-  q: "How do Managed IT Services reduce IT costs?",
+  {
+    q: "How do Managed IT Services reduce IT costs?",
 
-  a: "Managed IT Services reduce downtime, automate maintenance, optimize resources, and provide predictable costs while minimizing in-house IT staffing needs.",
-},
+    a: "Managed IT Services reduce downtime, automate maintenance, optimize resources, and provide predictable costs while minimizing in-house IT staffing needs.",
+  },
 
-{
-  q: "Can Managed IT Services support cloud infrastructure?",
+  {
+    q: "Can Managed IT Services support cloud infrastructure?",
 
-  a: "Yes. Managed IT Services support public, private, hybrid, and multi-cloud environments through monitoring, security, optimization, backups, and disaster recovery.",
-},
+    a: "Yes. Managed IT Services support public, private, hybrid, and multi-cloud environments through monitoring, security, optimization, backups, and disaster recovery.",
+  },
 ];
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -298,49 +331,9 @@ export default function ManagedServicesPage() {
         </div>
       </section>
 
-      {/* ---------- Hub diagram ---------- */}
-      <section className={`${styles.section} ${styles.tinted}`}>
-        <div className="container">
-          <div className={styles.head}>
-            <h2>
-              Comprehensive Managed Services for <span className={styles.gradText}>Modern Enterprises</span>
-            </h2>
-          </div>
 
-          <div className={styles.hub}>
-            <svg className={styles.hubLines} viewBox="0 0 968 570" preserveAspectRatio="none" aria-hidden="true">
-              <circle cx="484" cy="285" r="282" className={styles.hubRingFaint} />
-              <circle cx="484" cy="285" r="256" />
-              <path d="M337 72L484 285M297 285H484M337 498L484 285M631 72L484 285M671 285H484M631 498L484 285" />
-            </svg>
 
-            <div className={styles.hubCenter}>
-              <img src={asset("/images/attm.webp")} alt="Atlantech Global" width={170} height={68} />
-            </div>
 
-            {hubServices.map((s, i) => (
-              <div className={`${styles.hubItem} ${styles[s.pos]}`} key={s.title}>
-                <span className={styles.hubIcon}>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    {s.icon}
-                  </svg>
-                </span>
-                <div className={styles.hubCard}>
-                  <h3>
-                    <span className={styles.hubNum}>{pad(i + 1)}</span>
-                    {s.title}
-                  </h3>
-                  <ul>
-                    {s.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ---------- Expertise ---------- */}
       <section className={styles.section}>
@@ -369,6 +362,60 @@ export default function ManagedServicesPage() {
                 </span>
                 <h3>{e.title}</h3>
                 <p>{e.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+
+      {/* ---------- AI Automation Core Capabilities ---------- */}
+      <section className={styles.section} id="ai-capabilities">
+        <div className="container">
+          <div className={styles.head}>
+            <h2 className={styles.title}>
+              Intelligent Managed Services{" "}
+              <span className={styles.gradText}>
+                Capabilities for Every Business
+              </span>
+            </h2>
+            <p className={styles.body}>
+              Explore specialized capabilities that combine intelligent
+              automation, proactive IT management, and scalable enterprise
+              solutions to improve operational efficiency.
+            </p>
+          </div>
+
+          <ul className={styles.aicapGrid}>
+            {aicapabilities.map((c, i) => (
+              <li className={styles.aicapCard} key={c.title}>
+                <span className={styles.aicapNum}>{pad(i + 1)}</span>
+
+                <h3>{c.title}</h3>
+
+                <p className={styles.aicapDesc}>{c.desc}</p>
+
+                <ul className={styles.aicapPoints}>
+                  {c.points.map((p) => (
+                    <li key={p}>
+                      <span className={styles.aitick}>
+                        <CheckIcon />
+                      </span>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className={styles.aicapMetric}>
+                  {/* <strong>{c.metric.num}</strong> {c.metric.label} */}
+                  <a
+                    href={c.href}
+                    className="btn btn-primary"
+                    style={{ marginTop: "2rem" }}
+                  >
+                    Explore Our Services <ArrowIcon />
+                  </a>
+                </p>
               </li>
             ))}
           </ul>

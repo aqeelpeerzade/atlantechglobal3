@@ -1,1 +1,1 @@
-export const SITE_URL = "https://projects.atlantechglobal.com/agbeta";
+export const SITE_URL = "https://projects.atlantechglobal.com/agbeta3";

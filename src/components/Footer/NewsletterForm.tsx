@@ -18,7 +18,11 @@ export default function NewsletterForm() {
 
   return (
     <>
-      <form className={styles.subscribe} onSubmit={handleSubmit}>
+      <form
+        className={styles.subscribe}
+        onSubmit={handleSubmit}
+        method="POST"
+      >
         <label htmlFor="newsletter-email" className="sr-only">
           Work email
         </label>

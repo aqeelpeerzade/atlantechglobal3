@@ -19,7 +19,11 @@ export default function ContactForm() {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+      method="POST"
+    >
       <input type="checkbox" name="botcheck" hidden tabIndex={-1} autoComplete="off" />
       <input type="text" name="name" placeholder="Name" aria-label="Name" autoComplete="name" required />
       <div className={styles.row}>

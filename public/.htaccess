@@ -1,6 +1,6 @@
 Options -MultiViews -Indexes
 DirectoryIndex index.html
-ErrorDocument 404 /agbeta/404.html
+ErrorDocument 404 /agbeta3/404.html
 
 <IfModule mod_headers.c>
   <FilesMatch "\.(js|css|woff2)$">

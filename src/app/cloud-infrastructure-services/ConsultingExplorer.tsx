@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, type CSSProperties } from "react";
-import { CheckIcon } from "@/lib/icons";
+import { ArrowIcon, CheckIcon } from "@/lib/icons";
 import styles from "./page.module.css";
 
 export type ConsultingService = {
   title: string;
   summary: string;
   detail: { heading: string; body: string; points: string[] };
+  href: string;
 };
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -30,13 +31,28 @@ export default function ConsultingExplorer({ items }: { items: ConsultingService
           onClick={() => setActive(i)}
           style={{ "--order": i * 2 } as CSSProperties}
         >
+
+
           <span className={styles.tabNum}>{pad(i + 1)}</span>
+
           <span>
+
             <span className={styles.tabTitle}>{s.title}</span>
             <span className={styles.tabDesc}>{s.summary}</span>
+
+
+
+
           </span>
+
         </button>
+
+
       ))}
+
+
+
+
 
       <div
         className={styles.detail}
@@ -44,6 +60,7 @@ export default function ConsultingExplorer({ items }: { items: ConsultingService
         aria-live="polite"
         style={{ "--order": active * 2 + 1 } as CSSProperties}
       >
+
         <h3>{detail.heading}</h3>
         <p>{detail.body}</p>
         <ul className={styles.detailPoints}>
@@ -65,7 +82,17 @@ export default function ConsultingExplorer({ items }: { items: ConsultingService
             <span>ISO 27001, SOC 2 Type II, and HIPAA validated blueprints</span>
           </div>
           <span className={styles.verified}>Verified</span>
+
+
+
+
+
+
+
+
         </div>
+        <a href={items[active].href} className="btn btn-primary" style={{ marginTop: "0.9rem", marginLeft: "-0.1rem" }}>Explore Services <ArrowIcon /></a>
+
       </div>
     </div>
   );

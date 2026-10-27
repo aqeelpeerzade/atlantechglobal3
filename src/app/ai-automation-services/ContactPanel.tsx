@@ -19,7 +19,11 @@ export default function ContactPanel({ source }: { source: string }) {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+      method="POST"
+    >
       <input type="checkbox" name="botcheck" hidden tabIndex={-1} autoComplete="off" />
       <div className={styles.fieldRow}>
         <label className={styles.field}>

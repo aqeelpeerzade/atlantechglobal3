@@ -195,7 +195,7 @@ const platforms = [
   {
     chip: "PLATFORM 05",
     icon: icons.spark,
-    title: "Zoho",
+    title: "Zoho Workplace",
     sub: "Connect business workflows with smarter applications.",
     desc: "Use integrated business applications to streamline customer relationship management, sales processes, collaboration and day-to-day operations.",
     caps: ["CRM Solutions", "Business Automation", "Application Integration", "Reporting & Analytics"],

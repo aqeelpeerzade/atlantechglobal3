@@ -7,7 +7,7 @@ import { ArrowIcon, ChevronIcon, GlobeIcon } from "@/lib/icons";
 import { asset } from "@/lib/asset";
 import styles from "./Header.module.css";
 
-type MenuKey = "services" | "industries" | "whyUs"| "work" | "insights" | "about"|"platforms";
+type MenuKey = "services" | "industries" | "whyUs" | "work" | "insights" | "about" | "platforms";
 
 type MenuLink = { title: string; desc?: string; href: string; icon?: string };
 
@@ -26,13 +26,13 @@ type NavItem = { label: string; href: string } | { label: string; menu: MenuKey 
 const NAV: NavItem[] = [
   { label: "Services", menu: "services" },
   { label: "Industries", menu: "industries" },
-{ label: "Platforms", menu: "platforms" },
+  { label: "Platforms", menu: "platforms" },
 
   // { label: "Contact Us", menu: "contact" },
   { label: "Our Work", menu: "work" },
   { label: "Insights", menu: "insights" },
   { label: "About", menu: "about" },
-  { label: "Careers", href: "careers" }
+  { label: "Careers", href: "/careers" }
   // { label: "FAQ", href: "/#faq" },
 
 ];
@@ -51,10 +51,11 @@ const MENUS: Record<MenuKey, Menu> = {
     links: [
       { title: "AI & Automation", desc: "Build intelligent business workflows.", href: "/ai-automation-services", icon: "/images/ai-auto.svg" },
       { title: "Product Engineering", desc: "Digital products from idea to launch.", href: "/product-engineering-services", icon: "/images/automation.svg" },
-      { title: "Cloud Infrastructure", desc: "Cloud migration and DevOps.", href: "/cloud-infrastructure-services", icon: "/images/badal.svg" },
-     { title: "Data Analytics", desc: "Turn enterprise data into insights.", href: "/data-analytics-services", icon: "/images/data-analytics.svg" },
-      { title: "Managed Services", desc: "24x7 infrastructure management.", href: "/managed-services", icon: "/images/mana-services.svg" },
       { title: "Digital Transformation", desc: "Enterprise modernization strategy.", href: "/digital-transformation-services", icon: "/images/inovation.svg" },
+      { title: "Cloud Infrastructure", desc: "Cloud migration and DevOps.", href: "/cloud-infrastructure-services", icon: "/images/badal.svg" },
+      { title: "Data Analytics", desc: "Turn enterprise data into insights.", href: "/data-analytics-services", icon: "/images/data-analytics.svg" },
+      { title: "Managed Services", desc: "24x7 infrastructure management.", href: "/managed-services", icon: "/images/mana-services.svg" },
+
     ],
     aside: (
       <>
@@ -126,7 +127,7 @@ const MENUS: Record<MenuKey, Menu> = {
       </div>
     ),
   },
-  
+
 
   work: {
     eyebrow: "OUR WORK",
@@ -135,7 +136,7 @@ const MENUS: Record<MenuKey, Menu> = {
     cta: { label: "View portfolio", href: "/#work" },
     layout: "icons",
     links: [
-      { title: "Digital Experiences", desc: "Products shipped at scale.", href: "/#work", icon: "/images/ou-star.svg" },
+      { title: "Digital Experiences", desc: "Products shipped at scale.", href: "/digital-transformation-services/digital-experience-commerce", icon: "/images/ou-star.svg" },
       { title: "Success Stories", desc: "Impact across industries.", href: "/#testimonials", icon: "/images/success-stories.svg" },
       { title: "Client Testimonials", desc: "In their own words.", href: "/#testimonials", icon: "/images/client.svg" },
     ],
@@ -191,7 +192,6 @@ const MENUS: Record<MenuKey, Menu> = {
       { title: "About Atlantech", desc: "Our story and mission.", href: "/who-we-are" },
       { title: "Leadership", desc: "The team behind the work.", href: "/who-we-are" },
       { title: "Why Us", desc: "What sets us apart.", href: "/why-us" },
-      { title: "Careers", desc: "Join a global team.", href: "/careers" },
       { title: "Contact", desc: "Talk to an expert.", href: "/contact" },
     ],
     aside: (
@@ -215,7 +215,7 @@ const MENUS: Record<MenuKey, Menu> = {
   },
 
 
-platforms: {
+  platforms: {
     eyebrow: "Platforms",
     title: "Technology Platforms That Power Business.",
     desc: "Discover enterprise platforms that connect customer experiences, business operations, cloud infrastructure, and intelligent applications.",
@@ -223,10 +223,10 @@ platforms: {
     layout: "icons",
     links: [
       { title: "Adobe Commerce", desc: "Create flexible, scalable commerce experiences.", href: "/platforms/adobe-commerce", icon: "/images/icons/adobe-commerce.svg" },
-      { title: "Adobe Experience Platform", desc: "Connect data to create better customer experiences.", href: "/platforms/adobe-experience-platform", icon: "/images/icons/adobe-experience.svg" },
-      { title: "ERPNext", desc: "Simplify business operations with connected ERP.", href: "/platforms/erpnext", icon: "/images/icons/erpnext.svg" },
+      { title: "Adobe Experience Platform", desc: "Connect data to create better customer experiences.", href: "/platforms/adobe-experience-platform-consulting", icon: "/images/icons/adobe-experience.svg" },
+      { title: "ERPNext", desc: "Simplify business operations with connected ERP.", href: "/platforms/erpnext-consulting-services", icon: "/images/icons/erpnext.svg" },
       { title: "Google Cloud", desc: "Build and scale with cloud technology.", href: "/platforms/google-cloud", icon: "/images/icons/google-cloud.svg" },
-      { title: "Zoho", desc: "Connect business workflows with smarter applications.", href: "/platforms/zoho", icon: "/images/icons/zoho.svg" },
+      { title: "Zoho WorkPlace", desc: "Connect business workflows with smarter applications.", href: "/platforms/zoho-workplace", icon: "/images/icons/zoho.svg" },
     ],
     aside: (
       <div className={styles.photo} style={bg("/images/trustedby.webp")}>
@@ -235,8 +235,8 @@ platforms: {
       </div>
     ),
   },
-  
-};  
+
+};
 
 const SERVICE_STATS = [
   ["150+", "EXPERTS"],
@@ -314,7 +314,7 @@ export default function Header() {
     };
   }, []);
 
-  
+
   useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "";
     return () => {
@@ -322,11 +322,11 @@ export default function Header() {
     };
   }, [drawerOpen]);
 
-    useEffect(() => {
-  return () => {
-    if (hoverTimer.current) clearTimeout(hoverTimer.current);
-  };
-}, []);
+  useEffect(() => {
+    return () => {
+      if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    };
+  }, []);
 
   const menu = activeMega ? MENUS[activeMega] : null;
 

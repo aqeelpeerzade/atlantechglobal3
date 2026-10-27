@@ -1,3 +1,5 @@
+
+import HeroScroll from "./HeroScroll";
 import type { Metadata } from "next";
 import Link from "next/link";
 import ConsultationForm from "@/components/ConsultationForm/ConsultationForm";
@@ -140,9 +142,9 @@ const industries: Industry[] = [
   { label: "Manufacturing", image: "/images/industry-manufacturing.webp", icon: "/images/manufacturing.svg" },
   { label: "Retail & E-Commerce", image: "/images/industry-retail.webp", icon: "/images/e-com.svg" },
   { label: "Hospitality", image: "/images/atlantech-global-collaborating.webp", icon: "/images/inovation.svg" },
- 
+
   { label: "Real Estate", image: "/images/industry-banking.webp", icon: "/images/banking.svg" },
-   { label: "Telecommunications", image: "/images/industry-telecom.webp", icon: "/images/telecommunications.svg" },
+  { label: "Telecommunications", image: "/images/industry-telecom.webp", icon: "/images/telecommunications.svg" },
   { label: "Energy & Utilities", image: "/images/industry-energy.webp", icon: "/images/energy-utility.svg" },
   { label: "Logistics & Supply Chain", image: "/images/industry-logistics.webp", icon: "/images/logistics.svg" },
   { label: "Fintech", image: "/images/industry-government.webp", icon: "/images/gov-pub.svg" },
@@ -291,37 +293,15 @@ const highlightIcons = {
   ),
   trend: <path d="M3 17l6-6 4 4 8-8M15 7h6v6" />,
 };
-  
+
 export default function HomePage() {
-  
+
   return (
     <>
       <RevealOnScroll />
-      <section className={styles.hero}>
-        <div className="container">
-          <div className={styles.heroStage}>
-            {/* minWidth={768} is kept for future if needed */}
-            <LazyVideo src={asset("/videos/hero.mp4")} className={styles.heroVideo}    />
-            <div className={styles.heroOverlay} />
-            <div className={styles.heroContent}>
-              {/* <p className={styles.heroEyebrow}>Atlantech Global</p>
-              <h1 className={styles.heroTitle}>Your AI-Ready Technology &amp; Consulting Partner</h1> */}
-              <p className={styles.heroSub}>
-                Leading IT Solutions Company delivering AI, Digital Transformation, and Product
-                Engineering worldwide.
-              </p>
-              <div className={styles.actions}>
-                <a href="#contact" className="btn btn-primary">
-                  Talk to Our Experts <ArrowIcon />
-                </a>
-                <a href="#services" className="btn btn-outline-dark">
-                  Explore Our Services
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <HeroScroll />
+
 
       <section className={styles.trusted} aria-labelledby="trusted-title">
         <h2 id="trusted-title" className={styles.trustedTitle}>
@@ -443,16 +423,16 @@ export default function HomePage() {
                 {/* <a href="#contact" className={styles.serviceLink}>
                   {s.cta} <ArrowIcon />
                 </a> */}
-                <Link href= {s.href} className={styles.serviceLink}>
-  {s.cta} <ArrowIcon />
-</Link>
+                <Link href={s.href} className={styles.serviceLink}>
+                  {s.cta} <ArrowIcon />
+                </Link>
               </article>
             ))}
           </div>
 
           <div className={styles.ctaStrip}>
             {/* minWidth={768} for future to add in LazyVideo */}
-            <LazyVideo src={asset("/videos/cta-network.mp4")} className={styles.ctaVideo}  />
+            <LazyVideo src={asset("/videos/cta-network.mp4")} className={styles.ctaVideo} />
             <div className={styles.ctaOverlay} />
             <h2>
               Turn Technology Into <span className="text-purple-light">Your Competitive Advantage</span>

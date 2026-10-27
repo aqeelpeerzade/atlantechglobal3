@@ -45,10 +45,10 @@ const capabilities = [
     title: "AI Strategy & Engineering",
     desc: "Develop a clear AI roadmap aligned with business goals, enabling secure, scalable, and future-ready AI adoption.",
     points: ["AI readiness & data maturity audit", "Customised AI model development", "MLOps & model lifecycle management"],
-  
+
     metric: { num: "4.2×", label: "Return on pilots" },
     href: "ai-strategy-enginnering"
-   
+
 
   },
   {
@@ -67,16 +67,16 @@ const capabilities = [
     href: "process-automation"
   },
   {
-  title: "Intelligent Commerce",
-  desc: "Enhance digital commerce experiences with AI-powered personalization, intelligent recommendations, and automated customer journeys to increase engagement and conversions.",
-  points: [
-    "AI-powered product recommendations",
-    "Personalized shopping experiences",
-    "Intelligent pricing & commerce automation"
-  ],
-  metric: { num: "3.5×", label: "Higher engagement" },
-  href: "intelligent-commerce"
-},
+    title: "Intelligent Commerce",
+    desc: "Enhance digital commerce experiences with AI-powered personalization, intelligent recommendations, and automated customer journeys to increase engagement and conversions.",
+    points: [
+      "AI-powered product recommendations",
+      "Personalized shopping experiences",
+      "Intelligent pricing & commerce automation"
+    ],
+    metric: { num: "3.5×", label: "Higher engagement" },
+    href: "intelligent-commerce"
+  },
   // {
   //   title: "ML-Driven Insights",
   //   desc: "Transform data into actionable intelligence with machine learning services, enabling smarter decisions, optimized performance, and growth.",
@@ -220,78 +220,78 @@ const assurances = [
 
 const faqs: AutomationFaqItem[] = [
   {
-  q: "What are AI automation solutions?",
+    q: "What are AI automation solutions?",
 
-  a: [
-    "AI automation solutions are intelligent technologies that combine artificial intelligence, robotic process automation (RPA), machine learning, generative AI, and workflow automation to streamline business operations.",
-  ],
-
-  list: {
-    intro: "Common AI automation solutions include:",
-    items: [
-      "Intelligent document processing",
-      "AI chatbots and virtual assistants",
-      "Business process automation",
-      "Predictive analytics",
-      "Workflow automation",
-      "AI-powered decision support",
-      "Process mining and optimization",
-      "Enterprise system integration",
+    a: [
+      "AI automation solutions are intelligent technologies that combine artificial intelligence, robotic process automation (RPA), machine learning, generative AI, and workflow automation to streamline business operations.",
     ],
+
+    list: {
+      intro: "Common AI automation solutions include:",
+      items: [
+        "Intelligent document processing",
+        "AI chatbots and virtual assistants",
+        "Business process automation",
+        "Predictive analytics",
+        "Workflow automation",
+        "AI-powered decision support",
+        "Process mining and optimization",
+        "Enterprise system integration",
+      ],
+    },
+
   },
 
-},
+  {
+    q: "How do I choose the right AI automation company?",
 
-{
-  q: "How do I choose the right AI automation company?",
-
-  a: [
-    "When selecting an AI automation company, evaluate its technical expertise, industry experience, and ability to deliver scalable solutions.",
-  ],
-
-  list: {
-    intro: "Look for a partner that offers:",
-    items: [
-      "AI consulting and strategy",
-      "Custom AI development",
-      "Process automation expertise",
-      "Generative AI implementation",
-      "Machine learning capabilities",
-      "Enterprise AI integration",
-      "Cloud and API integration",
-      "Ongoing optimization and support",
+    a: [
+      "When selecting an AI automation company, evaluate its technical expertise, industry experience, and ability to deliver scalable solutions.",
     ],
+
+    list: {
+      intro: "Look for a partner that offers:",
+      items: [
+        "AI consulting and strategy",
+        "Custom AI development",
+        "Process automation expertise",
+        "Generative AI implementation",
+        "Machine learning capabilities",
+        "Enterprise AI integration",
+        "Cloud and API integration",
+        "Ongoing optimization and support",
+      ],
+    },
+
   },
 
-},
+  {
+    q: "What is the difference between AI automation and robotic process automation (RPA)?",
 
-{
-  q: "What is the difference between AI automation and robotic process automation (RPA)?",
-
-  a: [
-    "Robotic Process Automation (RPA) automates repetitive, rule-based tasks by following predefined instructions. AI automation goes beyond RPA by enabling systems to learn from data, understand language, recognize patterns, and make intelligent decisions.",
-  ],
-
-},
-
-{
-  q: "How long does it take to implement AI automation?",
-
-  a: [
-    "The implementation timeline depends on project complexity, business processes, and system integrations.",
-  ],
-
-  list: {
-    intro: "Typical timelines are:",
-    items: [
-      "2–4 weeks: AI assessment and automation roadmap",
-      "4–8 weeks: Pilot implementation",
-      "2–4 months: Department-level automation",
-      "4–12 months: Enterprise-wide AI automation deployment",
+    a: [
+      "Robotic Process Automation (RPA) automates repetitive, rule-based tasks by following predefined instructions. AI automation goes beyond RPA by enabling systems to learn from data, understand language, recognize patterns, and make intelligent decisions.",
     ],
+
   },
 
-},
+  {
+    q: "How long does it take to implement AI automation?",
+
+    a: [
+      "The implementation timeline depends on project complexity, business processes, and system integrations.",
+    ],
+
+    list: {
+      intro: "Typical timelines are:",
+      items: [
+        "2–4 weeks: AI assessment and automation roadmap",
+        "4–8 weeks: Pilot implementation",
+        "2–4 months: Department-level automation",
+        "4–12 months: Enterprise-wide AI automation deployment",
+      ],
+    },
+
+  },
 ];
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -330,7 +330,7 @@ export default function AiAutomationPage() {
                 </a>
 
 
-                
+
               </div>
             </div>
 
@@ -364,7 +364,7 @@ export default function AiAutomationPage() {
               <div key={s.label}>
                 <dt>{s.num}</dt>
                 <dd>{s.label}</dd>
-                
+
               </div>
             ))}
           </dl>
@@ -420,14 +420,14 @@ export default function AiAutomationPage() {
                   <text x="122" y="123">Engine</text>
                 </g>
               </svg> */}
-<img
-  src={asset("/images/system-arcitecture.png")}
-  alt="Glowing purple neural network of connected nodes representing AI automation"
-  width={1200}
-  height={900}
-  fetchPriority="high"
-  className={styles.archSvg} // Kept your existing CSS class if responsive styling/layout rules apply
-/>
+              <img
+                src={asset("/images/system-arcitecture.png")}
+                alt="Glowing purple neural network of connected nodes representing AI automation"
+                width={1200}
+                height={900}
+                fetchPriority="high"
+                className={styles.archSvg} // Kept your existing CSS class if responsive styling/layout rules apply
+              />
 
               <div className={styles.archFoot}>
                 <div>
@@ -468,11 +468,11 @@ export default function AiAutomationPage() {
           </div>
           <ul className={styles.capGrid}>
             {capabilities.map((c, i) => (
-              
+
               <li className={`${styles.capCard}${c.featured ? ` ${styles.capFeatured}` : ""}`} key={c.title}>
                 <span className={styles.capNum}>{pad(i + 1)}</span>
-                
- 
+
+
                 <h3>{c.title}</h3>
                 <p className={styles.capDesc}>{c.desc}</p>
                 <ul className={styles.capPoints}>
@@ -485,18 +485,14 @@ export default function AiAutomationPage() {
                     </li>
                   ))}
                 </ul>
-                               <p className={styles.capMetric}>
+                <p className={styles.capMetric}>
                   <strong>{c.metric.num}</strong> {c.metric.label}
 
-  <a href={c.href} className="btn btn-primary" style={{marginTop: "2rem"}} >
-                Explore Our Services <ArrowIcon />
-              </a>
+                  <a href={c.href} className="btn btn-primary" style={{ marginTop: "2rem" }} >
+                    Explore Our Services <ArrowIcon />
+                  </a>
 
                 </p>
-            
- 
-
-
 
               </li>
             ))}
@@ -621,7 +617,7 @@ export default function AiAutomationPage() {
                 <p className={styles.indMetric}>
                   Key Metric: <b>{ind.metric}</b>
                 </p>
-                
+
               </li>
             ))}
           </ul>

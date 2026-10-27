@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 /** Where the "Cloud Infrastructure Services" breadcrumb links. Change if your parent page lives elsewhere. */
-const PARENT_HREF = "/cloud-infrastructure";
+const PARENT_HREF = "/cloud-infrastructure-services";
 
 function Icon({ children }: { children: ReactNode }) {
   return (
