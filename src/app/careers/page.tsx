@@ -106,7 +106,7 @@ export default function CareersPage() {
 
             <div className={styles.heroArt}>
               <img
-                src={asset("/images/who-are-we.webp")}
+                src={asset("/images/careers-page.png")}
                 alt="Atlantech Global team collaborating around a conference table"
                 width={1400}
                 height={1000}
@@ -278,7 +278,7 @@ export default function CareersPage() {
       </section>
 
       {/* ---------- CTA ---------- */}
-    
+
       <section className={styles.cta}>
         <svg className={styles.ctaLines} viewBox="0 0 1200 360" preserveAspectRatio="none" aria-hidden="true">
           <g>

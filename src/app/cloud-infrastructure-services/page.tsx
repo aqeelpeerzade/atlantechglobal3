@@ -362,15 +362,14 @@ export default function CloudInfrastructurePage() {
         <div className="container">
           <div className={styles.head}>
             <h2 className={styles.title}>
-              Intelligent Managed Services{" "}
+              Cloud Consulting Services for{" "}
               <span className={styles.gradText}>
-                Capabilities for Every Business
+                Modern, Secure &amp; Scalable Infrastructure
               </span>
             </h2>
             <p className={styles.body}>
-              Explore specialized capabilities that combine intelligent
-              automation, proactive IT management, and scalable enterprise
-              solutions to improve operational efficiency.
+              Modernize infrastructure with expert Cloud Consulting Services for secure migration, optimized workloads,
+              enhanced performance, and scalable digital transformation success.
             </p>
           </div>
 

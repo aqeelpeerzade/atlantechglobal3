@@ -38,18 +38,9 @@ const aicapabilities = [
       "Scalable Cloud",
       "Continuous ROI",
     ],
-    href: "/digital-transformation-services/consulting-strategy",
+    href: "consulting-strategy",
   },
-  {
-    title: "Business Process Transformation",
-    desc: "Business Transformation Consulting streamlines operations with AI, automation, and digital solutions, improving productivity, collaboration, agility, innovation, and sustainable growth.",
-    points: [
-      "Process Automation",
-      "Workflow Orchestration",
-      "Measurable Savings",
-    ],
-    href: "/digital-transformation-services/application-modernization",
-  },
+
   {
     title: "Application Modernization",
     desc: "Modernize legacy applications into secure, scalable cloud-native platforms, reducing technical debt, enhancing performance, accelerating deployment, and improving user experience.",
@@ -58,7 +49,7 @@ const aicapabilities = [
       "Microservices & APIs",
       "Zero-Downtime Migration",
     ],
-    href: "/digital-transformation-services/application-modernization",
+    href: "application-modernization",
   },
   {
     title: "Enterprise Applications & ERP",
@@ -68,7 +59,7 @@ const aicapabilities = [
       "System Integration",
       "Unified Data",
     ],
-    href: "/digital-transformation-services/enterprise-applications-erp",
+    href: "enterprise-applications-erp",
   },
   {
     title: "Digital Experience & Digital Commerce",
@@ -78,7 +69,7 @@ const aicapabilities = [
       "Omnichannel Delivery",
       "Experience Analytics",
     ],
-    href: "/digital-transformation-services/digital-experience-commerce",
+    href: "digital-experience-commerce",
   },
   {
     title: "Digital Growth",
@@ -88,7 +79,7 @@ const aicapabilities = [
       "Performance Marketing",
       "Growth Analytics",
     ],
-    href: "/digital-transformation-services/digital-growth",
+    href: "digital-growth",
   },
 ];
 // const services: TransformationService[] = [
@@ -447,15 +438,14 @@ export default function DigitalTransformationPage() {
         <div className="container">
           <div className={styles.head}>
             <h2 className={styles.title}>
-              Intelligent Managed Services{" "}
+              Digital Transformation{" "}
               <span className={styles.gradText}>
-                Capabilities for Every Business
+                Solutions for Business Growth
               </span>
             </h2>
             <p className={styles.body}>
-              Explore specialized capabilities that combine intelligent
-              automation, proactive IT management, and scalable enterprise
-              solutions to improve operational efficiency.
+              Discover digital transformation solutions that streamline business
+              processes, modernize applications, and drive innovation.
             </p>
           </div>
 

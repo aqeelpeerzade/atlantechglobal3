@@ -485,15 +485,14 @@ export default function ProductEngineeringPage() {
         <div className="container">
           <div className={styles.head}>
             <h2 className={styles.title}>
-              Intelligent Managed Services{" "}
+              End-to-End {" "}
               <span className={styles.gradText}>
-                Capabilities for Every Business
+
+                Product Engineering Services for Every Stage of Innovation
               </span>
             </h2>
             <p className={styles.body}>
-              Explore specialized capabilities that combine intelligent
-              automation, proactive IT management, and scalable enterprise
-              solutions to improve operational efficiency.
+              Explore our Product Engineering Services to build scalable, high-performance digital products through innovative design, software development, and quality assurance.
             </p>
           </div>
 
@@ -531,10 +530,11 @@ export default function ProductEngineeringPage() {
             ))}
           </ul>
         </div>
-      </section>
+      </section >
 
       {/* ---------- Digital solutions ---------- */}
-      <section className={`${styles.section} ${styles.tinted} ${styles.ruled}`}>
+      < section className={`${styles.section} ${styles.tinted} ${styles.ruled}`
+      }>
         <div className="container">
           <div className={styles.head}>
             <h2 className={styles.title}>
@@ -569,10 +569,10 @@ export default function ProductEngineeringPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ---------- Lifecycle ---------- */}
-      <section className={styles.section}>
+      < section className={styles.section} >
         <div className="container">
           <div className={styles.head}>
             <h2 className={styles.title}>
@@ -604,10 +604,10 @@ export default function ProductEngineeringPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ---------- FAQ ---------- */}
-      <section className={`${styles.section} ${styles.faqSection}`} id="faq">
+      < section className={`${styles.section} ${styles.faqSection}`} id="faq" >
         <div className="container">
           <div className={`${styles.head} ${styles.headNarrow}`}>
             <h2 className={styles.title}>
@@ -616,7 +616,7 @@ export default function ProductEngineeringPage() {
           </div>
           <ProductFaq items={faqs} />
         </div>
-      </section>
+      </section >
 
       {/* ---------- CTA banner ---------- */}
       {/* <section className={styles.bannerWrap}>
@@ -676,6 +676,6 @@ export default function ProductEngineeringPage() {
           </div>
         </div>
       </section>
-    </div>
+    </div >
   );
 }

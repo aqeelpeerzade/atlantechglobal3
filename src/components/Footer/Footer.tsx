@@ -7,17 +7,17 @@ const COLUMNS = [
   {
     title: "Capabilities",
     links: [
-      { label: "Digital Transformation", href: "/digital-transformation" },
+      { label: "Digital Transformation", href: "digital-transformation-services" },
       { label: "Cloud Engineering", href: "/cloud-engineering" },
-      { label: "AI & Automation", href: "/ai-automation" },
-      { label: "Product Engineering", href: "/product-engineering" },
-     { label: "Data Analytics", href: "/data-analytics" },
-   { label: "Managed Services", href: "/managed-services" },
-   
+      { label: "AI & Automation", href: "/ai-automation-services" },
+      { label: "Product Engineering", href: "/product-engineering-services" },
+      { label: "Data Analytics", href: "/data-analytics-services" },
+      { label: "Managed Services", href: "/managed-services" },
+
 
     ],
   },
-  
+
   {
     title: "Industries",
     links: [

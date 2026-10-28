@@ -25,10 +25,14 @@
 
 .tinted {
   background: var(--dt-tint);
+
+
+
 }
 
 .ruled {
   position: relative;
+  background: var(--dt-line);
 }
 
 .ruled::before {

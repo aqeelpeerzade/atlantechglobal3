@@ -186,10 +186,10 @@ const MENUS: Record<MenuKey, Menu> = {
     eyebrow: "ABOUT",
     title: "A global technology partner.",
     desc: "A decade of engineering for Fortune-class enterprises across six countries.",
-    cta: { label: "About Atlantech", href: "/who-we-are" },
+    cta: { label: "About Atlantech Global", href: "/who-we-are" },
     layout: "list",
     links: [
-      { title: "About Atlantech", desc: "Our story and mission.", href: "/who-we-are" },
+      { title: "About Atlantech Global", desc: "Our story and mission.", href: "/who-we-are" },
       { title: "Leadership", desc: "The team behind the work.", href: "/who-we-are" },
       { title: "Why Us", desc: "What sets us apart.", href: "/why-us" },
       { title: "Contact", desc: "Talk to an expert.", href: "/contact" },

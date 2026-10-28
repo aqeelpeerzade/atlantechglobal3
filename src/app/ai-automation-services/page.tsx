@@ -420,8 +420,9 @@ export default function AiAutomationPage() {
                   <text x="122" y="123">Engine</text>
                 </g>
               </svg> */}
+
               <img
-                src={asset("/images/system-arcitecture.png")}
+                src={asset("/images/llm-based.jpg")}
                 alt="Glowing purple neural network of connected nodes representing AI automation"
                 width={1200}
                 height={900}

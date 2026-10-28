@@ -424,15 +424,15 @@ export default function DataAnalyticsPage() {
         <div className="container">
           <div className={styles.head}>
             <h2 className={styles.title}>
-              Intelligent Managed Services{" "}
+              Data Analytics Services {" "}
               <span className={styles.gradText}>
-                Capabilities for Every Business
+                to Turn Data into Actionable Insights
               </span>
             </h2>
             <p className={styles.body}>
-              Explore specialized capabilities that combine intelligent
-              automation, proactive IT management, and scalable enterprise
-              solutions to improve operational efficiency.
+              Transform enterprise data into strategic business value with scalable analytics, AI-powered insights, and
+              modern data platforms that drive confident decision-making.
+
             </p>
           </div>
 

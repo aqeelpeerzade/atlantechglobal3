@@ -467,7 +467,7 @@ export default function HomePage() {
       </section>
 
       <section className={styles.section} id="industries">
-        <div className="container">
+        {/* <div className="container">
           <p className="eyebrow-pill">INDUSTRIES</p>
           <h2 className="section-title">
             Technology Solutions Tailored for <span className="text-purple">Every Industry</span>
@@ -478,7 +478,7 @@ export default function HomePage() {
             sustainable digital transformation across global markets.
           </p>
           <IndustryGrid items={industries} />
-        </div>
+        </div> */}
       </section>
 
       <section className={`${styles.section} ${styles.tinted}`} id="work">
