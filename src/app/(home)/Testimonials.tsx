@@ -52,7 +52,7 @@ export default function Testimonials({ items, interval = 5000 }: { items: Testim
               <span className={styles.testiName}>{t.name}</span>
               <span className={styles.testiRole}>{t.role}</span>
             </span>
-            <img src={asset("/images/5-star.svg")} alt="Rated 5 out of 5" className={styles.testiStars} width={90} height={16} />
+            <img loading="lazy" decoding="async" src={asset("/images/5-star.svg")} alt="Rated 5 out of 5" className={styles.testiStars} width={90} height={16} />
           </figcaption>
         </div>
       </figure>

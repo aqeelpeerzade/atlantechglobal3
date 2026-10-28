@@ -79,39 +79,6 @@ const aicapabilities = [
     href: "mobile-web-saas-ecommerce",
   },
 ];
-const services = [
-  {
-    title: "Product Strategy & Consulting",
-    desc: "Define a clear product vision, validate ideas, and create a strategic roadmap that aligns technology investments with your business goals.",
-    href: "product-strategy-consulting"
-  },
-  {
-    title: "UI/UX Design & Prototyping",
-    desc: "Create intuitive user experiences with Product Design and Development that transform ideas into interactive prototypes, validate concepts, and deliver engaging, user-centric digital products.",
-    href: "ui-ux-prototyping"
-  },
-  {
-    title: "API & Microservices",
-    desc: "Develop secure APIs and scalable microservices architectures that enable seamless system integration, improve application performance, and support flexible, cloud-native product ecosystems.",
-    href: "api-microservices"
-  },
-  {
-    title: "Testing & QA Automation",
-    desc: "Ensure reliable, high-quality software through automated testing, performance validation, security assessments, and continuous QA processes that accelerate releases and reduce defects.",
-    href: "testing-qa-automation"
-  },
-  {
-    title: "Mobile, Web & SaaS",
-    desc: "Build scalable Mobile App Development and Web Application Development solutions, along with secure SaaS platforms, that deliver seamless user experiences across devices and support business growth.",
-    href: "mobile-web-saas-ecommerce"
-  },
-];
-
-const blueprint = [
-  { code: "UI", title: "Experience Layer", detail: "React, Next.js, Flutter, iOS/Android" },
-  { code: "API", title: "Scalable Microservices Core", detail: "GraphQL, gRPC, Event-Driven Kafka", tag: "Resilient", active: true },
-  { code: "DB", title: "Cloud Storage & Vector Engine", detail: "Distributed Multi-Region Persistence" },
-];
 
 const solutions = [
   {
@@ -304,7 +271,7 @@ export default function ProductEngineeringPage() {
 
             <div className={styles.heroArt}>
               <img
-                src={asset("/images/prodengineering.png")}
+                src={asset("/images/prodengineering.webp")}
                 alt="Product engineer building a digital product at a laptop"
                 width={1200}
                 height={900}
@@ -425,60 +392,6 @@ export default function ProductEngineeringPage() {
       </section>
 
       {/* ---------- End-to-end services ---------- */}
-      {/* <section className={styles.section} id="services">
-        <div className="container">
-          <div className={`${styles.head} ${styles.headNarrow}`}>
-            <h2 className={styles.title}>
-              End-to-End <span className={styles.gradText}>Product Engineering Services</span> for Every Stage of
-              Innovation
-            </h2>
-          </div>
-
-          <div className={styles.svcGrid}>
-            <ol className={styles.svcList}>
-              {services.map((s, i) => (
-                <li key={s.title}>
-                  <span className={styles.svcNum}>{pad(i + 1)}</span>
-                  <div>
-                    <h3>{s.title}</h3>
-                    <p>{s.desc}</p>
-                  </div>
-                  <a href={s.href} className={styles.svcChevron} aria-label={`Explore ${s.title}`}><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg></a>
-
-                </li>
-              ))}
-            </ol>
-
-            <div className={styles.bpCard}>
-              <div className={styles.bpHead}>
-                <span>ARCHITECTURE BLUEPRINT</span>
-                <span className={styles.bpBadge}>ACTIVE NODE</span>
-              </div>
-              <div className={styles.bpStack}>
-                {blueprint.map((n) => (
-                  <div className={`${styles.bpNode}${n.active ? ` ${styles.bpActive}` : ""}`} key={n.code}>
-                    <span className={styles.bpCode}>{n.code}</span>
-                    <span className={styles.bpText}>
-                      <b>{n.title}</b>
-                      <span>{n.detail}</span>
-                    </span>
-                    {n.tag ? (
-                      <span className={styles.bpTag}>{n.tag}</span>
-                    ) : (
-                      <span className={`${styles.dot} ${styles.dotGreen}`} />
-                    )}
-                  </div>
-                ))}
-              </div>
-              <div className={styles.bpFoot}>
-                <span>Security &amp; Compliance Built-in</span>
-                <b>SOC2 &amp; ISO 27001 Ready</b>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
 
       {/* ---------- AI Automation Core Capabilities ---------- */}
       <section className={styles.section} id="ai-capabilities">
@@ -517,7 +430,6 @@ export default function ProductEngineeringPage() {
                 </ul>
 
                 <p className={styles.aicapMetric}>
-                  {/* <strong>{c.metric.num}</strong> {c.metric.label} */}
                   <a
                     href={c.href}
                     className="btn btn-primary"
@@ -619,22 +531,6 @@ export default function ProductEngineeringPage() {
       </section >
 
       {/* ---------- CTA banner ---------- */}
-      {/* <section className={styles.bannerWrap}>
-        <div className="container">
-          <div className={styles.banner}>
-            <h2>Want to Future-Proof Your Product Engineering Transformation?</h2>
-            <p>
-              Transform ideas into scalable digital products with AI-driven innovation, cloud-native development, and
-              agile delivery. Our Product Engineering Services accelerate growth, reduce risks, and deliver
-              measurable business value.
-            </p>
-            <a href="#contact" className="btn btn-primary btn-small">
-              Modernize Products
-              <ArrowSvg />
-            </a>
-          </div>
-        </div>
-      </section> */}
 
       {/* ---------- Contact ---------- */}
       <section className={`${styles.section} ${styles.tinted}`} id="contact">

@@ -29,7 +29,6 @@ const capabilities = [
   { icon: "/images/ioi.svg", title: "Intelligent Operations & Insights" },
 ];
 
-
 const aicapabilities = [
   {
     title: "Application Maintenance",
@@ -62,65 +61,6 @@ const aicapabilities = [
     href: "offshore-development-teams",
   },
 ];
-// `pos` places each card and its icon around the hub diagram on desktop (see .l1 … .r3 in the CSS).
-const hubServices = [
-  {
-    pos: "l1",
-    title: "Infrastructure Services",
-    items: ["24/7 Infrastructure monitoring & triage", "Server, storage, and network admin", "Performance & capacity planning", "Preventive system health checks"],
-    icon: (
-      <>
-        <rect x="4" y="4" width="16" height="6" rx="1.5" />
-        <rect x="4" y="14" width="16" height="6" rx="1.5" />
-      </>
-    ),
-  },
-  {
-    pos: "l2",
-    title: "AWS Managed Services",
-    items: ["AWS cloud monitoring & oversight", "Cloud cost & resource optimization", "Disaster recovery & continuity", "Security, compliance & workload health"],
-    icon: (
-      <>
-        <rect x="3" y="4" width="18" height="12" rx="2" />
-        <path d="M8 20h8M12 16v4" />
-      </>
-    ),
-  },
-  {
-    pos: "l3",
-    title: "Application Services",
-    items: ["Proactive app monitoring & SLA support", "Performance tuning & query resolution", "Version upgrades & automated patch ops", "Continuous lifecycle management"],
-    icon: <path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14" />,
-  },
-  {
-    pos: "r1",
-    title: "Database Services",
-    items: ["Database admin & health telemetry", "Backup, recovery & disaster preparedness", "Performance tuning & index optimization", "Security, encryption & integrity governance"],
-    icon: (
-      <>
-        <ellipse cx="12" cy="5.5" rx="7" ry="2.8" />
-        <path d="M5 5.5v13c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-13M5 12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8" />
-      </>
-    ),
-  },
-  {
-    pos: "r2",
-    title: "Enterprise Services",
-    items: ["End-to-end IT operations management", "24/7 service desk & user support", "IT governance & operational reporting", "Workflow automation to reduce downtime"],
-    icon: (
-      <>
-        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
-        <path d="M14 3v5h5M10 13l3 3M13 13l-3 3" />
-      </>
-    ),
-  },
-  {
-    pos: "r3",
-    title: "Managed Cloud Services",
-    items: ["Multi-cloud and hybrid orchestration", "Cloud monitoring & stack optimization", "Identity, security, and governance", "Dynamic scaling & FinOps efficiency"],
-    icon: <path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5z" />,
-  },
-] as const;
 
 const expertise = [
   {
@@ -322,7 +262,7 @@ export default function ManagedServicesPage() {
             {capabilities.map((c) => (
               <li className={styles.capCard} key={c.title}>
                 <span className={styles.iconBox}>
-                  <img src={asset(c.icon)} alt="" width={20} height={20} />
+                  <img loading="lazy" decoding="async" src={asset(c.icon)} alt="" width={20} height={20} />
                 </span>
                 {c.title}
               </li>
@@ -330,10 +270,6 @@ export default function ManagedServicesPage() {
           </ul>
         </div>
       </section>
-
-
-
-
 
       {/* ---------- Expertise ---------- */}
       <section className={styles.section}>
@@ -367,7 +303,6 @@ export default function ManagedServicesPage() {
           </ul>
         </div>
       </section>
-
 
       {/* ---------- AI Automation Core Capabilities ---------- */}
       <section className={styles.section} id="ai-capabilities">
@@ -407,7 +342,6 @@ export default function ManagedServicesPage() {
                 </ul>
 
                 <p className={styles.aicapMetric}>
-                  {/* <strong>{c.metric.num}</strong> {c.metric.label} */}
                   <a
                     href={c.href}
                     className="btn btn-primary"

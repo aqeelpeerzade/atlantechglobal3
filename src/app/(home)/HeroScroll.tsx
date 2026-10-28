@@ -34,7 +34,8 @@ export default function HeroScroll() {
             return heroTop + hero.offsetHeight - stage.offsetHeight;
         };
 
-        // active = we are still inside the locked hero zone (before the end target)
+        // Still inside the locked hero zone (before the end target).
+
         const isActive = () => window.scrollY < getTarget() - 2;
 
         // one shared fast animation for touch + wheel
@@ -172,10 +173,11 @@ export default function HeroScroll() {
     }, []);
 
     return (
-        <section ref={heroRef} className={styles.hero} style={{ height: "calc(10    0svh + 85px)" }}>
+        <section ref={heroRef} className={styles.hero} style={{ height: "calc(100svh + 85px)" }}>
             <div ref={stageRef} className={styles.heroStage}>
                 <LazyVideo
                     src={asset("/videos/hero.mp4")}
+                    webmSrc={asset("/videos/hero.webm")}
                     className={styles.heroVideo}
                 />
 

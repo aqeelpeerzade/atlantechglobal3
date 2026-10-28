@@ -3,7 +3,6 @@ import Link from "next/link";
 import { asset } from "@/lib/asset";
 import { ArrowIcon, CheckIcon } from "@/lib/icons";
 import DigitalFaq, { type DigitalFaqItem } from "./DigitalFaq";
-import ServiceExplorer, { type TransformationService } from "./ServiceExplorer";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -27,7 +26,6 @@ const highlights = [
 ];
 
 const tags = ["Cloud Optimization", "AI Automation", "Modern Engineering", "Enterprise Security"];
-
 
 const aicapabilities = [
   {
@@ -82,43 +80,36 @@ const aicapabilities = [
     href: "digital-growth",
   },
 ];
-// const services: TransformationService[] = [
-//   {
 //     name: "Consulting & Strategy",
 //     heading: "Consulting & Strategy",
 //     body: "Our Digital Transformation Consulting Services align technology with business goals, enabling AI, cloud, automation, modernization, efficiency, and sustainable growth.",
 //     pillars: ["Agile Delivery", "Scalable Cloud", "Continuous ROI"],
 //     href: "/digital-transformation-services/consulting-strategy"
 //   },
-//   {
 //     name: "Business Process Transformation",
 //     heading: "Business Process Transformation",
 //     body: "Business Transformation Consulting streamlines operations with AI, automation, and digital solutions, improving productivity, collaboration, agility, innovation, and sustainable growth..",
 //     pillars: ["Process Automation", "Workflow Orchestration", "Measurable Savings"],
 //     href: "/digital-transformation-services/application-modernization"
 //   },
-//   {
 //     name: "Application Modernization",
 //     heading: "Application Modernization",
 //     body: "Modernize legacy applications into secure, scalable cloud-native platforms, reducing technical debt, enhancing performance, accelerating deployment, and improving user experience. .",
 //     pillars: ["Cloud-Native Design", "Microservices & APIs", "Zero-Downtime Migration"],
 //     href: "/digital-transformation-services/application-modernization"
 //   },
-//   {
 //     name: "Enterprise Applications & ERP",
 //     heading: "Enterprise Applications & ERP",
 //     body: "Enterprise application and ERP solutions streamline operations, improve visibility, automate workflows, enable data-driven decisions, enhance productivity, and support scalable growth. ",
 //     pillars: ["ERP Implementation", "System Integration", "Unified Data"],
 //     href: "/digital-transformation-services/enterprise-applications-erp"
 //   },
-//   {
 //     name: "Digital Experience & Digital Commerce",
 //     heading: "Digital Experience & Digital Commerce",
 //     body: "Create intuitive websites, portals, mobile apps, and digital platforms using modern UX and technology to boost engagement, satisfaction, and loyalty.                         .",
 //     pillars: ["UX & Design", "Omnichannel Delivery", "Experience Analytics"],
 //     href: "/digital-transformation-services/digital-experience-commerce"
 //   },
-//   {
 //     name: "Digital Growth",
 //     heading: "Digital Growth",
 //     body: "Drive measurable business growth through digital marketing, SEO, performance campaigns, and data-driven strategies to increase visibility, generate leads, and maximize conversions.",
@@ -126,7 +117,6 @@ const aicapabilities = [
 
 //     href: "/digital-transformation-services/digital-growth"
 //   },
-// ];
 
 const technologies = [
   {
@@ -418,20 +408,6 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* ---------- Services we offer ---------- */}
-      {/* <section className={`${styles.section} ${styles.tinted}`}>
-        <div className="container">
-          <div className={styles.head}>
-            <h2 className={styles.title}>Digital Transformation Services We Offer</h2>
-            <p className={styles.body}>
-              Accelerate business growth through intelligent digital transformation and enterprise innovation.
-            </p>
-          </div>
-          <ServiceExplorer items={services} />
-        </div>
-      </section> */}
-
-
-
 
       {/* ---------- AI Automation Core Capabilities ---------- */}
       <section className={styles.section} id="ai-capabilities">
@@ -470,7 +446,6 @@ export default function DigitalTransformationPage() {
                 </ul>
 
                 <p className={styles.aicapMetric}>
-                  {/* <strong>{c.metric.num}</strong> {c.metric.label} */}
                   <a
                     href={c.href}
                     className="btn btn-primary"
@@ -484,7 +459,6 @@ export default function DigitalTransformationPage() {
           </ul>
         </div>
       </section>
-
 
       {/* ---------- Technologies ---------- */}
       <section className={styles.section}>

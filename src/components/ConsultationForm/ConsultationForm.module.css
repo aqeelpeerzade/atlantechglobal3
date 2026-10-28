@@ -7,9 +7,14 @@
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 50px rgba(17, 19, 24, 0.08);
 }
+.form {
+  --field-bg: var(--bg-lavender);
+  --field-border: var(--gray-300);
+}
 .form.flat { border-radius: 0; box-shadow: none; }
 
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cell { display: grid; gap: 6px; align-content: start; }
+.row { display: grid; align-items: start; grid-template-columns: 1fr 1fr; gap: 12px; }
 
 .form input,
 .form select,

@@ -6,10 +6,13 @@ type NetworkInfo = { saveData?: boolean; effectiveType?: string };
 
 export default function LazyVideo({
   src,
+  webmSrc,
   className,
   minWidth = 0,
 }: {
   src: string;
+  /** Smaller WebM alternative, used when the browser can play it. */
+  webmSrc?: string;
   className?: string;
   minWidth?: number;
 }) {
@@ -30,7 +33,8 @@ export default function LazyVideo({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
-        video.src = src;
+        const canPlayWebm = webmSrc && video.canPlayType('video/webm; codecs="vp9"') !== "";
+        video.src = canPlayWebm ? webmSrc : src;
         video.play().catch(() => { });
         observer.disconnect();
       },
@@ -38,7 +42,7 @@ export default function LazyVideo({
     );
     observer.observe(video);
     return () => observer.disconnect();
-  }, [src, minWidth]);
+  }, [src, webmSrc, minWidth]);
 
   return <video ref={ref} className={className} muted loop playsInline preload="none" aria-hidden="true" />;
 }

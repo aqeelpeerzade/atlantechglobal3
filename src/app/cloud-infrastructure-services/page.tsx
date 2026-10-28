@@ -3,7 +3,6 @@ import Link from "next/link";
 import { asset } from "@/lib/asset";
 import { ArrowIcon, CheckIcon } from "@/lib/icons";
 import CloudFaq, { type CloudFaqItem } from "./CloudFaq";
-import ConsultingExplorer, { type ConsultingService } from "./ConsultingExplorer";
 import ContactPanel from "./ContactPanel";
 import styles from "./page.module.css";
 
@@ -75,13 +74,9 @@ const architectureLayers = [
   { title: "[Security + Monitoring]", detail: "Zero-Trust Policies, SIEM Threat Detection & Observability", tag: "Zero-Trust Core" },
 ];
 
-
-// const services: ConsultingService[] = [
-//   {
 //     title: "Cloud Strategy & Migration",
 //     summary:
 //       "Expert Cloud Migration Services and Data Migration Services seamlessly migrate applications, workloads, infrastructure, minimizing downtime, reducing risk, maximizing business agility efficiently.",
-//     detail: {
 //       heading: "End-to-End Cloud Strategy, Lift-and-Shift & Cloud-Native Replatforming",
 //       body: "Our Cloud Strategy & Migration service delivers a risk-free methodology to transition complex workloads to elastic cloud topologies. By leveraging automated migration tooling and phased execution blueprints, we eliminate service disruption while re-factoring architectures to minimize cloud cost overheads.",
 //       points: [
@@ -95,11 +90,9 @@ const architectureLayers = [
 //     },
 //     href: "cloud-migration"
 //   },
-//   {
 //     title: "Multi-Cloud & Hybrid Cloud Solutions",
 //     summary:
 //       "Design, deploy, and manage hybrid and multi-cloud environments that improve flexibility, optimize costs, ensure high availability, and simplify operations across cloud platforms.",
-//     detail: {
 //       heading: "Unified Operations Across Multi-Cloud & Hybrid Environments",
 //       body: "We architect portable, vendor-neutral platforms that span AWS, Azure, Google Cloud, and your private data centers. A single governance and observability plane keeps workloads resilient, costs visible, and operations simple, no matter where each workload runs.",
 //       points: [
@@ -113,11 +106,9 @@ const architectureLayers = [
 //     },
 //     href: "multi-cloud-environments"
 //   },
-//   {
 //     title: "Cloud Security & Compliance",
 //     summary:
 //       "Protect environments with comprehensive Cloud Security Services, ensuring encryption, compliance, continuous monitoring, threat detection, identity management, and secure operations.",
-//     detail: {
 //       heading: "Zero-Trust Security & Continuous Compliance by Design",
 //       body: "Security is built into every layer of your cloud environment, not bolted on afterwards. We combine identity-first access controls, encryption, and automated policy enforcement with continuous threat detection so your platform stays protected and audit-ready.",
 //       points: [
@@ -131,11 +122,9 @@ const architectureLayers = [
 //     },
 //     href: "secure-cloud-architecture"
 //   },
-//   {
 //     title: "DevOps Consulting Services",
 //     summary:
 //       "Modernize legacy infrastructure using cloud-native technologies, automation, containerization, and DevOps practices to improve performance, scalability, and operational efficiency.",
-//     detail: {
 //       heading: "Cloud-Native DevOps, CI/CD & Platform Engineering",
 //       body: "We help engineering teams ship faster and more safely by automating the path from commit to production. Infrastructure as code, containerization, and self-healing pipelines replace manual releases with repeatable, observable delivery.",
 //       points: [
@@ -149,7 +138,6 @@ const architectureLayers = [
 //     },
 //     href: "devops-ci-cd"
 //   },
-// ];
 
 const journey = [
   { title: "Strategy", desc: "Readiness audit, cloud TCO modeling, and migration roadmap." },
@@ -237,7 +225,6 @@ const faqs: CloudFaqItem[] = [
       "Choose a cloud infrastructure partner with expertise in cloud strategy, migration, security, architecture, optimization, and ongoing managed services. The right provider should understand your business goals, recommend the most suitable cloud platform, ensure regulatory compliance, optimize costs, and deliver scalable infrastructure that supports long-term business growth.",
     ],
   },
-
 
 ];
 
@@ -343,19 +330,6 @@ export default function CloudInfrastructurePage() {
       </section>
 
       {/* ---------- Consulting services ---------- */}
-      {/* <section className={`${styles.section} ${styles.tinted} ${styles.ruled}`} id="services">
-        <div className="container">
-          <div className={`${styles.head} ${styles.headLeft}`}>
-            <h2 className={styles.title}>Cloud Consulting Services for Modern, Secure &amp; Scalable Infrastructure</h2>
-            <p className={styles.body}>
-              Modernize infrastructure with expert Cloud Consulting Services for secure migration, optimized workloads,
-              enhanced performance, and scalable digital transformation success.
-            </p>
-          </div>
-          <ConsultingExplorer items={services} />
-
-        </div>
-      </section> */}
 
       {/* ---------- AI Automation Core Capabilities ---------- */}
       <section className={styles.section} id="ai-capabilities">
@@ -394,7 +368,6 @@ export default function CloudInfrastructurePage() {
                 </ul>
 
                 <p className={styles.aicapMetric}>
-                  {/* <strong>{c.metric.num}</strong> {c.metric.label} */}
                   <a
                     href={c.href}
                     className="btn btn-primary"
@@ -408,12 +381,6 @@ export default function CloudInfrastructurePage() {
           </ul>
         </div>
       </section>
-
-
-
-
-
-
 
       {/* ---------- Transformation journey ---------- */}
       <section className={styles.section}>

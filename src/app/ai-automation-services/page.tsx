@@ -5,7 +5,6 @@ import { ArrowIcon, CheckIcon } from "@/lib/icons";
 import AutomationFaq, { type AutomationFaqItem } from "./AutomationFaq";
 import ContactPanel from "./ContactPanel";
 import styles from "./page.module.css";
-import { link } from "fs";
 
 export const metadata: Metadata = {
   title: "AI & Automation Services",
@@ -49,7 +48,6 @@ const capabilities = [
     metric: { num: "4.2×", label: "Return on pilots" },
     href: "ai-strategy-enginnering"
 
-
   },
   {
     title: "LLM-Based Solutions",
@@ -77,13 +75,11 @@ const capabilities = [
     metric: { num: "3.5×", label: "Higher engagement" },
     href: "intelligent-commerce"
   },
-  // {
   //   title: "ML-Driven Insights",
   //   desc: "Transform data into actionable intelligence with machine learning services, enabling smarter decisions, optimized performance, and growth.",
   //   points: ["Predictive maintenance & forecasting", "Customer behaviour & churn analysis", "Real-time visualisation dashboards"],
   //   metric: { num: "10×", label: "Query velocity" },
   //   href: "/ai-automation-services/ai-strategy-engineering"
-  // },
 ];
 
 const advanced = [
@@ -329,8 +325,6 @@ export default function AiAutomationPage() {
                   See capabilities
                 </a>
 
-
-
               </div>
             </div>
 
@@ -391,37 +385,7 @@ export default function AiAutomationPage() {
                 <span className={styles.liveBadge}>ACTIVE TELEMETRY</span>
               </div>
 
-              {/* <svg className={styles.archSvg} viewBox="0 0 320 210" role="img" aria-label="Diagram: an AI agent engine connecting data ingestion, an ERP/CRM target, a human-in-the-loop review step, and SOC 2 auditing">
-                <g className={styles.archLinks}>
-                  <path d="M60 46V102H110" className={styles.archDash} />
-                  <path d="M110 112H190M200 112V50H270" />
-                  <path d="M200 112H230V166H270" />
-                  <path d="M60 166V122H110" className={styles.archDash} />
-                </g>
-                <g className={styles.archNode}>
-                  <rect x="12" y="24" width="96" height="44" rx="8" />
-                  <rect x="212" y="24" width="96" height="44" rx="8" />
-                  <rect x="12" y="144" width="96" height="44" rx="8" />
-                  <rect x="212" y="144" width="96" height="44" rx="8" />
-                </g>
-                <rect x="110" y="82" width="90" height="60" rx="8" className={styles.archCore} />
-                <g className={styles.archText}>
-                  <text x="30" y="43">Data</text>
-                  <text x="30" y="58">Ingestion</text>
-                  <text x="230" y="43">ERP / CRM</text>
-                  <text x="230" y="58">Target</text>
-                  <text x="30" y="163">Human-in-</text>
-                  <text x="30" y="178">Loop</text>
-                  <text x="230" y="163">SOC2 /</text>
-                  <text x="230" y="178">Auditing</text>
-                </g>
-                <g className={styles.archTextCore}>
-                  <text x="122" y="108">AI Agent</text>
-                  <text x="122" y="123">Engine</text>
-                </g>
-              </svg> */}
-
-              <img
+              <img loading="lazy" decoding="async"
                 src={asset("/images/llm-based.jpg")}
                 alt="Glowing purple neural network of connected nodes representing AI automation"
                 width={1200}
@@ -472,7 +436,6 @@ export default function AiAutomationPage() {
 
               <li className={`${styles.capCard}${c.featured ? ` ${styles.capFeatured}` : ""}`} key={c.title}>
                 <span className={styles.capNum}>{pad(i + 1)}</span>
-
 
                 <h3>{c.title}</h3>
                 <p className={styles.capDesc}>{c.desc}</p>

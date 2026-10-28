@@ -16,7 +16,7 @@ export const metadata: Metadata = {
  * Hero image: put the file in public/images/ and set its name here.
  * It is shown at roughly 3:2 and cropped to fit, so a landscape image works best.
  */
-const HERO_IMAGE = "/images/platform-page.png";
+const HERO_IMAGE = "/images/platform-page.webp";
 
 function Icon({ children }: { children: ReactNode }) {
   return (

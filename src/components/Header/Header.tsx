@@ -28,12 +28,10 @@ const NAV: NavItem[] = [
   { label: "Industries", menu: "industries" },
   { label: "Platforms", menu: "platforms" },
 
-  // { label: "Contact Us", menu: "contact" },
   { label: "Our Work", menu: "work" },
   { label: "Insights", menu: "insights" },
   { label: "About", menu: "about" },
   { label: "Careers", href: "/careers" }
-  // { label: "FAQ", href: "/#faq" },
 
 ];
 
@@ -128,7 +126,6 @@ const MENUS: Record<MenuKey, Menu> = {
     ),
   },
 
-
   work: {
     eyebrow: "OUR WORK",
     title: "Proof, not promises.",
@@ -214,7 +211,6 @@ const MENUS: Record<MenuKey, Menu> = {
     ),
   },
 
-
   platforms: {
     eyebrow: "Platforms",
     title: "Technology Platforms That Power Business.",
@@ -248,7 +244,6 @@ function isActive(item: NavItem, pathname: string): boolean {
   if ("href" in item) return item.href === pathname;
   const trimmed = pathname.replace(/\/$/, "");
   if (item.menu === "whyUs") return trimmed === "/why-us";
-  // if (item.menu === "contact") return trimmed === "/contact";
   if (item.menu === "about") return trimmed === "/who-we-are";
   return false;
 }
@@ -313,7 +308,6 @@ export default function Header() {
       desktop.removeEventListener("change", onBreakpoint);
     };
   }, []);
-
 
   useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "";
