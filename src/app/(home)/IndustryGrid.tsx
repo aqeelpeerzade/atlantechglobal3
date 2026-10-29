@@ -45,7 +45,7 @@ export default function IndustryGrid({ items }: { items: Industry[] }) {
             >
               <img src={asset(ind.image)} alt="" width={400} height={420} loading="lazy" decoding="async" />
               <span className={styles.industryBadge}>
-                <img src={asset(ind.icon)} alt="" width={18} height={18} />
+                <img loading="lazy" decoding="async" src={asset(ind.icon)} alt="" width={18} height={18} />
               </span>
               <h3>{ind.label}</h3>
             </li>

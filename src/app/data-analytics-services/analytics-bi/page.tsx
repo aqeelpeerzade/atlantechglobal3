@@ -55,8 +55,6 @@ function Ic({ name }: { name: IconName }) {
     );
 }
 
-const pad = (n: number) => String(n).padStart(2, "0");
-
 const visibility: { icon: IconName; text: string }[] = [
     { icon: "trend", text: "Track key performance indicators." },
     { icon: "eye", text: "Identify trends and performance gaps." },

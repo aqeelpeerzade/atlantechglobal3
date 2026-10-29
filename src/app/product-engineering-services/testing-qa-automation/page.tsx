@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 /** Where the "Product Engineering Services" breadcrumb links. Change if your parent page lives elsewhere. */
 const PARENT_HREF = "/product-engineering-services";
 /** Hero image in /public/images — change the file name if yours differs. */
-const HERO_IMAGE = "/images/tesingandqa-page.png";
+const HERO_IMAGE = "/images/tesingandqa-page.webp";
 
 /* ---- path helpers: every icon is one stroke path on a 24×24 grid ---- */
 const c = (x: number, y: number, r: number) => `M${x - r} ${y}a${r} ${r} 0 1 0 ${2 * r} 0a${r} ${r} 0 1 0 ${-2 * r} 0`;

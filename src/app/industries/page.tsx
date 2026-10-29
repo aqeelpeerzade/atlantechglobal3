@@ -82,7 +82,7 @@ const icons = {
  * Cards are shown at a 16:9 ratio and cropped to fit, so wide images work best.
  */
 const IMAGES = {
-  hero: "/images/industry-image.png",
+  hero: "/images/industry-image.webp",
   healthcare: "/images/industry-healthcare2.jpg",
   saas: "/images/industry-saas.jpg",
   proptech: "/images/industry-proptech.jpg",

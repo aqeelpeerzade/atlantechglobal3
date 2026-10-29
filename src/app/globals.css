@@ -160,6 +160,20 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
   border: 0;
 }
 
+.field-error {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.4;
+  text-transform: none;
+  color: #dc2626;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] { border-color: #dc2626 !important; }
+
 .form-status { padding: 10px 14px; border-radius: 10px; font-size: 13px; font-weight: 600; }
 .form-status.success { color: #15803d; background: rgba(34, 197, 94, 0.12); }
 .form-status.error { color: #b91c1c; background: rgba(239, 68, 68, 0.12); }

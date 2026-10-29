@@ -1,10 +1,8 @@
 
 import HeroScroll from "./HeroScroll";
-import type { Metadata } from "next";
 import Link from "next/link";
 import ConsultationForm from "@/components/ConsultationForm/ConsultationForm";
 import Faq, { type FaqItem } from "./Faq";
-import IndustryGrid, { type Industry } from "./IndustryGrid";
 import LazyVideo from "./LazyVideo";
 import RevealOnScroll from "./RevealOnScroll";
 import TechTiles from "./TechTiles";
@@ -13,12 +11,10 @@ import { ArrowIcon, CheckIcon } from "@/lib/icons";
 import { asset } from "@/lib/asset";
 import styles from "./page.module.css";
 
-// export const metadata: Metadata = {
 //   title: { absolute: "Atlantech Global — Your AI-Ready Technology & Consulting Partner" },
 //   description:
 //     "Atlantech Global is a leading IT solutions company delivering AI & Automation, Digital Transformation, Product Engineering, Cloud, Data Analytics and Managed Services worldwide.",
 //   alternates: { canonical: "/" },
-// };
 
 const clientLogoRows: string[][] = [
   [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13],
@@ -133,25 +129,6 @@ const technologies = [
     title: "Cybersecurity",
     desc: "Protect critical business assets with enterprise-grade cybersecurity, identity management, threat detection, risk assessment, and compliance-driven security solutions.",
   },
-];
-
-const industries: Industry[] = [
-
-  { label: "Healthcare & Life Sciences", image: "/images/industry-healthcare.webp", icon: "/images/lifescience.svg" },
-  { label: "Education", image: "/images/engineer-working-on-laptop.webp", icon: "/images/digital-experience.svg" },
-  { label: "Manufacturing", image: "/images/industry-manufacturing.webp", icon: "/images/manufacturing.svg" },
-  { label: "Retail & E-Commerce", image: "/images/industry-retail.webp", icon: "/images/e-com.svg" },
-  { label: "Hospitality", image: "/images/atlantech-global-collaborating.webp", icon: "/images/inovation.svg" },
-
-  { label: "Real Estate", image: "/images/industry-banking.webp", icon: "/images/banking.svg" },
-  { label: "Telecommunications", image: "/images/industry-telecom.webp", icon: "/images/telecommunications.svg" },
-  { label: "Energy & Utilities", image: "/images/industry-energy.webp", icon: "/images/energy-utility.svg" },
-  { label: "Logistics & Supply Chain", image: "/images/industry-logistics.webp", icon: "/images/logistics.svg" },
-  { label: "Fintech", image: "/images/industry-government.webp", icon: "/images/gov-pub.svg" },
-
-
-
-
 ];
 
 const caseStudies = [
@@ -302,7 +279,6 @@ export default function HomePage() {
 
       <HeroScroll />
 
-
       <section className={styles.trusted} aria-labelledby="trusted-title">
         <h2 id="trusted-title" className={styles.trustedTitle}>
           Trusted by Global Businesses Worldwide for Future-Ready Enterprise IT Solutions
@@ -391,7 +367,7 @@ export default function HomePage() {
             {impactStats.map((stat, i) => (
               <div className={`${styles.impactCard} ${styles.reveal}`} data-reveal style={{ "--d": `${i * 90}ms` } as React.CSSProperties} key={stat.title}>
                 <span className={styles.impactIcon}>
-                  <img src={asset("/images/starr.svg")} alt="" width={24} height={24} />
+                  <img loading="lazy" decoding="async" src={asset("/images/starr.svg")} alt="" width={24} height={24} />
                 </span>
                 <p className={styles.impactNum}>{stat.num}</p>
                 <h3 className={styles.impactTitle}>{stat.title}</h3>
@@ -420,9 +396,6 @@ export default function HomePage() {
                 <img src={asset(s.image)} alt="" width={640} height={480} loading="lazy" decoding="async" />
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                {/* <a href="#contact" className={styles.serviceLink}>
-                  {s.cta} <ArrowIcon />
-                </a> */}
                 <Link href={s.href} className={styles.serviceLink}>
                   {s.cta} <ArrowIcon />
                 </Link>
@@ -467,18 +440,6 @@ export default function HomePage() {
       </section>
 
       <section className={styles.section} id="industries">
-        {/* <div className="container">
-          <p className="eyebrow-pill">INDUSTRIES</p>
-          <h2 className="section-title">
-            Technology Solutions Tailored for <span className="text-purple">Every Industry</span>
-          </h2>
-          <p className="section-body">
-            Atlantech Global delivers industry-specific Enterprise Technology Solutions that help
-            organizations modernize operations, improve efficiency, accelerate innovation, and achieve
-            sustainable digital transformation across global markets.
-          </p>
-          <IndustryGrid items={industries} />
-        </div> */}
       </section>
 
       <section className={`${styles.section} ${styles.tinted}`} id="work">
@@ -536,7 +497,7 @@ export default function HomePage() {
             {platforms.map((p) => (
               <li className={styles.platform} key={p}>
                 <span className={styles.platformIcon}>
-                  <img src={asset("/images/tech-ecosystem-icons.svg")} alt="" width={18} height={18} />
+                  <img loading="lazy" decoding="async" src={asset("/images/tech-ecosystem-icons.svg")} alt="" width={18} height={18} />
                 </span>
                 {p}
               </li>
@@ -581,7 +542,7 @@ export default function HomePage() {
             {whyCards.map((card, i) => (
               <article className={`${styles.whyCard} ${styles.reveal}`} data-reveal style={{ "--d": `${(i % 3) * 90}ms` } as React.CSSProperties} key={card.title}>
                 <span className={styles.whyIcon}>
-                  <img src={asset(card.icon)} alt="" width={22} height={22} />
+                  <img loading="lazy" decoding="async" src={asset(card.icon)} alt="" width={22} height={22} />
                 </span>
                 <h3>{card.title}</h3>
                 <p>{card.desc}</p>

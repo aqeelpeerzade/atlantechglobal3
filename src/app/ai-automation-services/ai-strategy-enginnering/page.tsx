@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 /** Where the "AI Automation Services" breadcrumb links. Change if your parent page lives elsewhere. */
 const PARENT_HREF = "/ai-automation-services";
 /** Hero image: public/images/ai-strategy-services.jpg */
-const HERO_IMAGE = "/images/ai-strategy-services.png";
+const HERO_IMAGE = "/images/ai-strategy-services.webp";
 
 function Icon({ children }: { children: ReactNode }) {
   return (

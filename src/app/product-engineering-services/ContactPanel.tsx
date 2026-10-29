@@ -1,56 +1,64 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { submitLead } from "@/lib/submitLead";
+import type { FieldSpec } from "@/lib/validation";
+import FieldError from "@/components/forms/FieldError";
+import HumanCheck from "@/components/forms/HumanCheck";
+import { useLeadForm } from "@/components/forms/useLeadForm";
 import styles from "./page.module.css";
 
-type Status = "idle" | "loading" | "success" | "error";
+const BASE_SCHEMA: Record<string, FieldSpec> = {
+  first_name: { kind: "firstName", required: true },
+  last_name: { kind: "lastName", required: true },
+  email: { kind: "email", required: true },
+  company: { kind: "company", required: true },
+  message: { kind: "message", required: false },
+};
 
 export default function ContactPanel({ source }: { source: string }) {
-  const [status, setStatus] = useState<Status>("idle");
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    setStatus("loading");
-    const ok = await submitLead(new FormData(form), `Consultation request — ${source}`);
-    setStatus(ok ? "success" : "error");
-    if (ok) form.reset();
-  }
+  const form = useLeadForm({
+    schema: BASE_SCHEMA,
+    subject: () => `Consultation request — ${source}`,
+    source,
+  });
+  const { status, fieldProps, errorProps } = form;
 
   return (
-    <form
-      className={styles.form}
-      onSubmit={handleSubmit}
-      method="POST"
-    >
+    <form className={styles.form} {...form.formProps}>
       <input type="checkbox" name="botcheck" hidden tabIndex={-1} autoComplete="off" />
       <div className={styles.fieldRow}>
         <label className={styles.field}>
           First name
-          <input type="text" name="first_name" placeholder="Jane" autoComplete="given-name" required />
+          <input type="text" name="first_name" placeholder="Jane" autoComplete="given-name" maxLength={50} required {...fieldProps("first_name")} />
+          <FieldError {...errorProps("first_name")} />
         </label>
         <label className={styles.field}>
           Last name
-          <input type="text" name="last_name" placeholder="Doe" autoComplete="family-name" required />
+          <input type="text" name="last_name" placeholder="Doe" autoComplete="family-name" maxLength={50} required {...fieldProps("last_name")} />
+          <FieldError {...errorProps("last_name")} />
         </label>
       </div>
       <label className={styles.field}>
         Work email
-        <input type="email" name="email" placeholder="jane.doe@enterprise.com" autoComplete="email" required />
+        <input type="email" name="email" placeholder="jane.doe@enterprise.com" autoComplete="email" maxLength={254} required {...fieldProps("email")} />
+        <FieldError {...errorProps("email")} />
       </label>
       <label className={styles.field}>
         Company name
-        <input type="text" name="company" placeholder="Global Tech Corp" autoComplete="organization" required />
+        <input type="text" name="company" placeholder="Global Tech Corp" autoComplete="organization" maxLength={100} required {...fieldProps("company")} />
+        <FieldError {...errorProps("company")} />
       </label>
       <label className={styles.field}>
         How can we help?
         <textarea
           name="message"
           rows={4}
+          maxLength={2000}
           placeholder="Tell us about your product roadmap, modernizing requirements, or testing bottlenecks..."
+          {...fieldProps("message")}
         />
+        <FieldError {...errorProps("message")} />
       </label>
+      <HumanCheck checked={form.human} onChange={form.changeHuman} {...errorProps("human")} />
       <button type="submit" className={styles.submitBtn} disabled={status === "loading"}>
         {status === "loading" ? "Sending..." : "Request Product Consultation"}
       </button>

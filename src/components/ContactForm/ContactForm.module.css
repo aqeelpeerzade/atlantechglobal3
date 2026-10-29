@@ -1,6 +1,15 @@
-.form { display: flex; flex-direction: column; gap: 14px; }
+.form {
+  --field-bg: #faf9ff;
+  --field-border: var(--gray-300);
+  --field-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cell { display: grid; gap: 6px; align-content: start; }
+
+.row { display: grid; align-items: start; grid-template-columns: 1fr 1fr; gap: 14px; }
 
 .form input,
 .form textarea {

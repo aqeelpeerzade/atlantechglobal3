@@ -106,7 +106,7 @@ export default function CareersPage() {
 
             <div className={styles.heroArt}>
               <img
-                src={asset("/images/careers-page.png")}
+                src={asset("/images/careers-page.webp")}
                 alt="Atlantech Global team collaborating around a conference table"
                 width={1400}
                 height={1000}
